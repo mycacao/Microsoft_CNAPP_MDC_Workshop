@@ -39,18 +39,21 @@ https://learn.microsoft.com/ko-kr/azure/governance/policy/overview
 ### 연습 1: Microsoft Defender for Cloud 정책 개요
 
 1. Microsoft Defender for Cloud 블레이드의 왼쪽 탐색 창에서 **환경 설정**을 클릭합니다.
-2. **구독 1**을 선택하고 왼쪽 탐색 창에서 **보안 정책**을 선택합니다.
-3. **표준** 탭에 MCSB 및 241 권장 사항이 표시됩니다. **유형**은 **기본값**입니다. 이는 관리 그룹 또는 구독이 Defender for Cloud에 온보딩될 때 MCSB가 기본적으로 할당되기 때문입니다.
+2. **구독 Subscription**을 선택하고 왼쪽 탐색 창에서 **보안 정책 Security Policy**을 선택합니다.
+3. **표준** 탭에 MCSB 및 ❗❗❗241 (갯수 확인필요함 => 현재 228개 )❗❗❗ 권장 사항이 표시됩니다. **유형**은 **기본값**입니다. 이는 관리 그룹 또는 구독이 Defender for Cloud에 온보딩될 때 MCSB가 기본적으로 할당되기 때문입니다.
 
-참고: 앞서 언급했듯이 이는 기본값이며 Microsoft Defender for Cloud 온보딩의 일부로 자동으로 할당되었습니다. 기본 할당에는 감사 정책만 포함됩니다. 자세한 내용은 https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/concept-regulatory-compliance 를 방문하세요. MCSB는 Azure뿐만 아니라 다중 클라우드 환경의 보안 권장 사항과 모범 사례를 모두 모아놓은 종합적인 모음입니다.
+> 참고: 앞서 언급했듯이 이는 기본값이며 Microsoft Defender for Cloud 온보딩의 일부로 자동으로 할당되었습니다.
+> 기본 할당에는 감사 정책(audit policies)만 포함됩니다.
+> 자세한 내용은 https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/concept-regulatory-compliance 를 방문하세요.
+> MCSB는 Azure뿐만 아니라 다중 클라우드 환경의 보안 권장 사항과 모범 사례를 모두 모아놓은 종합적인 모음입니다.
 
-4. 할당 할당을 클릭합니다: **Microsoft Cloud Security Benchmark**. **효과**는 **감사**입니다. Microsoft Defender for Cloud는 사용자 환경을 평가하고 데이터를 감사합니다. 사용자의 승인 없이는 이를 시행하지 않습니다.
+4. assignment 할당을 클릭합니다: **Microsoft Cloud Security Benchmark**. **효과 Effect**는 **감사 Audit**입니다. Microsoft Defender for Cloud는 사용자 환경을 평가하고 데이터를 감사합니다. 사용자의 승인 없이는 이를 시행하지 않습니다.
 5. **보안 정책** 페이지로 돌아갑니다. **권장 사항** 탭을 클릭합니다. **Defender for Cloud** 및 **Azure Policy**의 **소스** 변경 사항을 확인합니다. **표준** 열도 기록해 둡니다.
 
 <img width="1058" height="550" alt="image" src="https://github.com/user-attachments/assets/25f86ae6-4d19-47a7-95fb-6fbc82ad29fa" />
 
 ### 연습 2: Azure 정책 살펴보기
-1. Azure Portal에서 **정책 블레이드**로 이동합니다. 상단의 검색 상자에서 "정책"을 검색하거나 https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade로 이동할 수 있습니다.
+1. Azure Portal에서 **정책 블레이드**로 이동합니다. 상단의 검색 상자에서 "정책"을 검색하거나 [https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade) 로 이동할 수 있습니다.
 2. 왼쪽 탐색 창의 **작성** 섹션에서 **정의**를 클릭하여 기본 제공 정책 정의 및 이니셔티브를 살펴보세요.
 3. 상단 메뉴에서 필터 버튼을 사용하여 범주를 **보안 센터**로 설정하고 **모두**의 선택을 취소합니다. **정의 유형**에서 **이니셔티브**를 선택하고 **모두**의 선택을 취소합니다.
 4. 이제 Microsoft Defender for Cloud에서 사용되는 기본 제공 이니셔티브를 볼 수 있으며, 일부는 미리 보기 버전입니다.
