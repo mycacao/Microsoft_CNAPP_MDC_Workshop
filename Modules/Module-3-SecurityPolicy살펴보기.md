@@ -68,13 +68,13 @@ https://learn.microsoft.com/ko-kr/azure/governance/policy/overview
 리소스 면제(exemption)를 사용하면 특정 리소스를 평가에서 제외할 수 있으므로 권장 사항을 더욱 세부적으로 조정할 수 있습니다.
 권장 사항을 사용할 때 오른쪽의 줄임표 메뉴를 클릭하고 '면제 만들기(exemption)'를 선택하여 면제를 만들 수 있습니다.
 
-참고: 면제는 Microsoft Defender for Cloud 고객에게 추가 비용 없이 제공되는 프리미엄 Azure 정책 기능입니다. 다른 사용자에게는 향후 요금이 부과될 수 있습니다.
+참고: 면제는 Microsoft Defender for Cloud 고객에게 추가 비용 없이 제공되는 프리미엄 Azure 정책 기능입니다. 다른 사용자에게는 향후 요금이 부과될 수 있습니다.  😱 😱 😱 😱 😱  <- 정말로???????????
 
 1. **Microsoft Defender for Cloud 블레이드**를 열고 왼쪽 탐색 창에서 **권장 사항**을 선택합니다.
-2. **"관리 포트**를 입력합니다.
+2. **Management Port**를 입력합니다.
 3. **가상 머신에서 관리 포트를 닫아야 합니다** 권장 사항을 선택합니다.
 4. **비정상 리소스** 목록에서 현재 리소스인 *asclab-win* 및 *asclab-linux*를 확인합니다.
-5. **asclab-win** 리소스를 선택한 다음 **면제 만들기**를 클릭합니다.
+5. **asclab-win** 리소스를 선택한 다음 **면제 만들기 --> exemption**를 클릭합니다.
 
 ![Create exemption](../Images/asc-management-ports-resource-exemption.gif?raw=true)
 
