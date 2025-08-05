@@ -6,7 +6,7 @@
 #### ⌛ 이 랩의 예상 완료 시간: 60분
 
 ## 목표
-이 연습에서는 현재 Microsoft Defender for Cloud의 보안 정책을 안내합니다. 이러한 보안 정책은 클라우드 보안 태세를 개선하는 데 도움이 되는 보안 표준과 권장 사항으로 구성되어 있습니다. 보안 표준은 [Microsoft 클라우드 보안 벤치마크(MCSB)](https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-regulatory-compliance), 규정 준수 표준 및 사용자 지정 표준으로 구성됩니다.
+이 연습에서는 현재 Microsoft Defender for Cloud의 보안 정책을 안내합니다. 이러한 보안 정책은 클라우드 보안 태세를 개선하는 데 도움이 되는 보안 표준과 권장 사항으로 구성되어 있습니다. 보안 표준은 [[Microsoft 클라우드 보안 벤치마크(MCSB)](https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-regulatory-compliance)](https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/concept-regulatory-compliance), 규정 준수 표준 및 사용자 지정 표준으로 구성됩니다.
 이 연습을 마치면 예외, 정책 적용 및 사용자 지정 정책을 만드는 방법을 알게 됩니다.
 
 #### 필수 구성 요소
@@ -42,7 +42,7 @@ https://learn.microsoft.com/ko-kr/azure/governance/policy/overview
 2. **구독 1**을 선택하고 왼쪽 탐색 창에서 **보안 정책**을 선택합니다.
 3. **표준** 탭에 MCSB 및 241 권장 사항이 표시됩니다. **유형**은 **기본값**입니다. 이는 관리 그룹 또는 구독이 Defender for Cloud에 온보딩될 때 MCSB가 기본적으로 할당되기 때문입니다.
 
-참고: 앞서 언급했듯이 이는 기본값이며 Microsoft Defender for Cloud 온보딩의 일부로 자동으로 할당되었습니다. 기본 할당에는 감사 정책만 포함됩니다. 자세한 내용은 https://aka.ms/ascpolicies를 방문하세요. MCSB는 Azure뿐만 아니라 다중 클라우드 환경의 보안 권장 사항과 모범 사례를 모두 모아놓은 종합적인 모음입니다.
+참고: 앞서 언급했듯이 이는 기본값이며 Microsoft Defender for Cloud 온보딩의 일부로 자동으로 할당되었습니다. 기본 할당에는 감사 정책만 포함됩니다. 자세한 내용은 https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/concept-regulatory-compliance 를 방문하세요. MCSB는 Azure뿐만 아니라 다중 클라우드 환경의 보안 권장 사항과 모범 사례를 모두 모아놓은 종합적인 모음입니다.
 
 4. 할당 할당을 클릭합니다: **Microsoft Cloud Security Benchmark**. **효과**는 **감사**입니다. Microsoft Defender for Cloud는 사용자 환경을 평가하고 데이터를 감사합니다. 사용자의 승인 없이는 이를 시행하지 않습니다.
 5. **보안 정책** 페이지로 돌아갑니다. **권장 사항** 탭을 클릭합니다. **Defender for Cloud** 및 **Azure Policy**의 **소스** 변경 사항을 확인합니다. **표준** 열도 기록해 둡니다.
