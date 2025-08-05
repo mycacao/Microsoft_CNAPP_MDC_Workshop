@@ -60,10 +60,13 @@ https://learn.microsoft.com/ko-kr/azure/governance/policy/overview
 5. 각 이니셔티브(정책 열)에 포함된 정책 수를 확인합니다.
 6. 이제 종료합니다.
 
-### 연습 3: 권장 사항에 대한 리소스 면제 만들기
+<img width="1835" height="701" alt="image" src="https://github.com/user-attachments/assets/8d9c60e0-f40b-493b-a119-dd8e5b71ff4f" />
 
-리소스 면제를 사용하면 특정 리소스를 평가에서 제외할 수 있으므로 권장 사항을 더욱 세부적으로 조정할 수 있습니다.
-권장 사항을 사용할 때 오른쪽의 줄임표 메뉴를 클릭하고 '면제 만들기'를 선택하여 면제를 만들 수 있습니다.
+
+### 연습 3: 권장 사항에 대한 리소스 면제(exemption) 만들기
+
+리소스 면제(exemption)를 사용하면 특정 리소스를 평가에서 제외할 수 있으므로 권장 사항을 더욱 세부적으로 조정할 수 있습니다.
+권장 사항을 사용할 때 오른쪽의 줄임표 메뉴를 클릭하고 '면제 만들기(exemption)'를 선택하여 면제를 만들 수 있습니다.
 
 참고: 면제는 Microsoft Defender for Cloud 고객에게 추가 비용 없이 제공되는 프리미엄 Azure 정책 기능입니다. 다른 사용자에게는 향후 요금이 부과될 수 있습니다.
 
