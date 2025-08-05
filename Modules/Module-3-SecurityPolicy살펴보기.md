@@ -47,6 +47,8 @@ https://learn.microsoft.com/ko-kr/azure/governance/policy/overview
 4. 할당 할당을 클릭합니다: **Microsoft Cloud Security Benchmark**. **효과**는 **감사**입니다. Microsoft Defender for Cloud는 사용자 환경을 평가하고 데이터를 감사합니다. 사용자의 승인 없이는 이를 시행하지 않습니다.
 5. **보안 정책** 페이지로 돌아갑니다. **권장 사항** 탭을 클릭합니다. **Defender for Cloud** 및 **Azure Policy**의 **소스** 변경 사항을 확인합니다. **표준** 열도 기록해 둡니다.
 
+<img width="1058" height="550" alt="image" src="https://github.com/user-attachments/assets/25f86ae6-4d19-47a7-95fb-6fbc82ad29fa" />
+
 ### 연습 2: Azure 정책 살펴보기
 1. Azure Portal에서 **정책 블레이드**로 이동합니다. 상단의 검색 상자에서 "정책"을 검색하거나 https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade로 이동할 수 있습니다.
 2. 왼쪽 탐색 창의 **작성** 섹션에서 **정의**를 클릭하여 기본 제공 정책 정의 및 이니셔티브를 살펴보세요.
