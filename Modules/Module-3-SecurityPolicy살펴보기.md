@@ -6,51 +6,56 @@
 #### ⌛ 이 랩의 예상 완료 시간: 60분
 
 ## 목표
-이 연습에서는 현재 Microsoft Defender for Cloud의 보안 정책을 안내합니다. 이러한 보안 정책은 클라우드 보안 태세를 개선하는 데 도움이 되는 보안 표준과 권장 사항으로 구성되어 있습니다. 보안 표준은 [[Microsoft 클라우드 보안 벤치마크(MCSB)](https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-regulatory-compliance)](https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/concept-regulatory-compliance), 규정 준수 표준 및 사용자 지정 표준으로 구성됩니다.
-이 연습을 마치면 예외, 정책 적용 및 사용자 지정 정책을 만드는 방법을 알게 됩니다.
+- 이번 랩은 현재 MDC (Microsoft Defender for Cloud)의 보안 정책(Security Policy)을 살펴봅니다.
+- 보안 정책은 클라우드 보안 태세를 개선하는 데 도움이 되는 보안 표준(Standard)와 권장 사항(Recommendation)으로 구성됩니다.
+- 보안 표준은 [[Microsoft 클라우드 보안 벤치마크(MCSB)](https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/concept-regulatory-compliance)], 규정 준수 표준(Regulatory compliance standards) 및 사용자 지정 표준(custom standards)으로 구성됩니다.
+- 이번 랩을 완료하면 예외, 정책 적용 및 사용자 지정 정책을 만드는 방법을 이해할수 있습니다.
 
 #### 필수 구성 요소
-Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요합니다. 무료 구독을 시작하려면 [모듈 1](https://github.com/Azure/Microsoft-Defender-for-Cloud/blob/main/Labs/Modules/Module-1-Preparing-the-Environment.md)을 진행하세요.
-
-### Azure Policy 란?
-
-> Azure Security Policy는 Azure 리소스에 대한 거버넌스 및 규정 준수를 강화하기 위한 도구로, 정책 정의를 통해 리소스의 속성을 제어하고, 비즈니스 규칙을 적용하며, 규정 준수 상태를 평가합니다.
-> 즉, 조직의 표준을 적용하고 리소스가 일관되게 구성되도록 보장하는 역할 수행
-
-### Azure Security Policy의 주요 기능:
-> 정책 정의:
-- JSON 형식으로 정의된 규칙 집합으로, 리소스의 속성, 설정 및 동작을 정의합니다.
-> 정책 할당:
-- 특정 범위(관리 그룹, 구독, 리소스 그룹 등)에 정책을 할당하여 해당 범위 내의 모든 리소스에 적용합니다.
-> 규정 준수 평가:
-- 리소스가 정책을 준수하는지 주기적으로 평가합니다.
-> 효과:
-- 정책 위반 시 리소스에 대한 조치(예: 거부, 수정, 감사)를 정의합니다. 
-### Azure Security Policy를 사용하는 이유:
-- 규정 준수: 다양한 규제 및 산업 표준을 준수하도록 지원합니다. 
-- 보안 강화: 조직의 보안 정책을 일관되게 적용하여 보안 위험을 줄입니다. 
-- 비용 절감: 리소스 구성 오류 및 낭비를 방지하여 비용을 절감합니다. 
-- 운영 효율성 향상: 일관된 구성을 통해 운영 및 관리 효율성을 높입니다.
-
-https://learn.microsoft.com/ko-kr/azure/governance/policy/overview
+Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요합니다. 무료 구독을 시작하려면 [모듈 1](https://github.com/mycacao/Microsoft_CNAPP_MDC_Workshop/blob/main/Modules/Module-1-MDC%ED%99%98%EA%B2%BD%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0.md)을 진행하세요.
 
 ---
 
-### 연습 1: Microsoft Defender for Cloud 정책 개요
+#### Azure Policy 란 무엇인가?
+- Azure Policy는 Azure 환경에서 리소스가 조직 표준 및 규정 준수 요구사항을 충족하는지 감사하고 강제하는 서비스입니다.
+- 즉, Azure 리소스에 대한 규칙을 정의하고, 해당 규칙을 기반으로 리소스가 생성되거나 수정될 때 자동으로 평가하여 규정 준수 여부를 확인하고, 필요에 따라 조치를 취할 수 있도록 합니다
+- 조직의 표준을 적용하고 리소스가 일관되게 구성되도록 보장하는 역할 수행
+- https://learn.microsoft.com/ko-kr/azure/governance/policy/overview
+
+### Azure Policy의 주요 기능
+> 정책 정의: JSON 형식으로 정의된 규칙 집합으로, 리소스의 속성, 설정 및 동작을 정의합니다. </br>
+> 정책 할당: 특정 범위(관리 그룹, 구독, 리소스 그룹 등)에 정책을 할당하여 해당 범위 내의 모든 리소스에 적용합니다. </br>
+> 규정 준수 평가: 리소스가 정책을 준수하는지 주기적으로 평가합니다. </br>
+> 효과: 정책 위반 시 리소스에 대한 조치(예: 거부, 수정, 감사)를 정의합니다.  </br>
+
+---
+
+### 연습 1: MDC 정책(Policy) 개요
 
 1. Microsoft Defender for Cloud 블레이드의 왼쪽 탐색 창에서 **환경 설정**을 클릭합니다.
 2. **구독 Subscription**을 선택하고 왼쪽 탐색 창에서 **보안 정책 Security Policy**을 선택합니다.
-3. **표준** 탭에 MCSB 및 ❗❗❗241 (갯수 확인필요함 => 현재 228개 )❗❗❗ 권장 사항이 표시됩니다. **유형**은 **기본값**입니다. 이는 관리 그룹 또는 구독이 Defender for Cloud에 온보딩될 때 MCSB가 기본적으로 할당되기 때문입니다.
 
-> 참고: 앞서 언급했듯이 이는 기본값이며 Microsoft Defender for Cloud 온보딩의 일부로 자동으로 할당되었습니다.
-> 기본 할당에는 감사 정책(audit policies)만 포함됩니다.
-> 자세한 내용은 https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/concept-regulatory-compliance 를 방문하세요.
-> MCSB는 Azure뿐만 아니라 다중 클라우드 환경의 보안 권장 사항과 모범 사례를 모두 모아놓은 종합적인 모음입니다.
+<img width="1270" height="872" alt="image" src="https://github.com/user-attachments/assets/c6a34b94-c4f4-4129-bc8b-19c709e5bb3e" />
 
-4. assignment 할당을 클릭합니다: **Microsoft Cloud Security Benchmark**. **효과 Effect**는 **감사 Audit**입니다. Microsoft Defender for Cloud는 사용자 환경을 평가하고 데이터를 감사합니다. 사용자의 승인 없이는 이를 시행하지 않습니다.
+3. **표준** 탭에 MCSB ( 현재 228개 ) 권장 사항(Recommendations) 이 표시됩니다. **유형**은 **기본값**입니다.</br>
+   이는 관리 그룹 또는 구독이 Defender for Cloud에 온보딩될 때 MCSB가 기본적으로 할당되기 때문입니다.
+
+> 참고: 앞서 언급했듯이 이는 기본값이며 Microsoft Defender for Cloud 온보딩의 일부로 자동으로 할당되었습니다.</br>
+> 기본 할당에는 감사 정책(audit policies)만 포함됩니다.</br>
+> 자세한 내용은 https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/concept-regulatory-compliance 에서 확인 </br>
+> MCSB는 Azure뿐만 아니라 다중 클라우드 환경의 보안 권장 사항과 모범 사례를 모두 모아놓은 종합적인 모음입니다.</br>
+
+<img width="1605" height="546" alt="image" src="https://github.com/user-attachments/assets/0f38f09f-7963-435e-8bcf-f71796646d57" />
+
+4. Assignment 할당을 클릭합니다: **Microsoft Cloud Security Benchmark**. **효과 Effect**는 **감사 Audit**입니다. </br>
+   Microsoft Defender for Cloud는 사용자 환경을 평가하고 데이터를 감사합니다. 사용자의 승인 없이는 이를 시행하지 않습니다. </br>
 5. **보안 정책** 페이지로 돌아갑니다. **권장 사항** 탭을 클릭합니다. **Defender for Cloud** 및 **Azure Policy**의 **소스** 변경 사항을 확인합니다. **표준** 열도 기록해 둡니다.
+<img width="1663" height="745" alt="image" src="https://github.com/user-attachments/assets/ff3e8577-ec0d-454b-b8c6-3c03ab1803b9" />
 
+⭐ 알아두면 좋은 정보 <br>
 <img width="1058" height="550" alt="image" src="https://github.com/user-attachments/assets/25f86ae6-4d19-47a7-95fb-6fbc82ad29fa" />
+
+---
 
 ### 연습 2: Azure 정책 살펴보기
 1. Azure Portal에서 **정책 블레이드**로 이동합니다. 상단의 검색 상자에서 "정책"을 검색하거나 [https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade) 로 이동할 수 있습니다.
