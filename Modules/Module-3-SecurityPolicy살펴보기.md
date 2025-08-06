@@ -52,14 +52,20 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 5. **보안 정책** 페이지로 돌아갑니다. **권장 사항** 탭을 클릭합니다. **Defender for Cloud** 및 **Azure Policy**의 **소스** 변경 사항을 확인합니다. **표준** 열도 기록해 둡니다.
 <img width="1663" height="745" alt="image" src="https://github.com/user-attachments/assets/ff3e8577-ec0d-454b-b8c6-3c03ab1803b9" />
 
-⭐ 알아두면 좋은 정보 <br>
+📌📌📌 알아두면 좋은 정보 <br>
 <img width="1058" height="550" alt="image" src="https://github.com/user-attachments/assets/25f86ae6-4d19-47a7-95fb-6fbc82ad29fa" />
 
 ---
 
-### 연습 2: Azure 정책 살펴보기
-1. Azure Portal에서 **정책 블레이드**로 이동합니다. 상단의 검색 상자에서 "정책"을 검색하거나 [https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade) 로 이동할 수 있습니다.
-2. 왼쪽 탐색 창의 **작성** 섹션에서 **정의**를 클릭하여 기본 제공 정책 정의 및 이니셔티브를 살펴보세요.
+### 연습 2: Azure 정책(Policy) 살펴보기
+1. Azure Portal에서 **정책 블레이드**로 이동합니다. 상단의 검색 상자에서 "정책"을 검색하거나 [정책](https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Overview) 로 이동할 수 있습니다.
+2. 왼쪽 탐색 창의 **작성 또는 제작, Authoring** 섹션에서 **정의**를 클릭하여 기본 제공 정책 정의 및 이니셔티브를 살펴보세요.
+
+✨✨✨ 잠깐, 정책(Policy Definition) 과 이니셔티브(Initiative Definition) 차이점은?</br>
+> Security Policy 는 MDC 에서 사용하는 보안 기준 및 규정 준수 세트 </br>
+> 이니셔티브는 여러 개의 Policy 정의를 묶은 Azure의 정책 집합(Policy Set Definition) </br>
+
+
 3. 상단 메뉴에서 필터 버튼을 사용하여 범주를 **보안 센터**로 설정하고 **모두**의 선택을 취소합니다. **정의 유형**에서 **이니셔티브**를 선택하고 **모두**의 선택을 취소합니다.
 4. 이제 Microsoft Defender for Cloud에서 사용되는 기본 제공 이니셔티브를 볼 수 있으며, 일부는 미리 보기 버전입니다.
 5. 각 이니셔티브(정책 열)에 포함된 정책 수를 확인합니다.
@@ -93,7 +99,7 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
   
   ![Modifying Microsoft Defender for Cloud default policy assignment](../Images/Inkedlab3pl6.gif?raw=true)
   
-> ⭐ 알아두면 좋은 정보: <br>
+📌📌📌 알아두면 좋은 정보: <br>
 > **완화됨** - 이 문제는 제안된 것과 다른 도구 또는 프로세스로 처리되었으므로 해당 리소스와 관련이 없습니다.
 > **면제** - 이 리소스에 대한 위험 감수
 
