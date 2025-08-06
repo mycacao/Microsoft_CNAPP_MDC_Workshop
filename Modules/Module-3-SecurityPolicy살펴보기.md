@@ -61,25 +61,36 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 1. Azure Portal에서 **정책 블레이드**로 이동합니다. 상단의 검색 상자에서 "정책"을 검색하거나 [정책](https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Overview) 로 이동할 수 있습니다.
 2. 왼쪽 탐색 창의 **작성 또는 제작, Authoring** 섹션에서 **정의**를 클릭하여 기본 제공 정책 정의 및 이니셔티브를 살펴보세요.
 
-✨✨✨ 잠깐, 정책(Policy Definition) 과 이니셔티브(Initiative Definition) 차이점은?</br>
-> Security Policy 는 MDC 에서 사용하는 보안 기준 및 규정 준수 세트 </br>
-> 이니셔티브는 여러 개의 Policy 정의를 묶은 Azure의 정책 집합(Policy Set Definition) </br>
+✨✨✨ 잠깐, 정책(Policy) 과 이니셔티브(Initiative) 차이점은? ChatGPT 가 잘 알려주네요 </br>
+> (MDC)에서 사용하는 Policy와 Initiative는 모두 Azure Policy의 개념에 기반을 두고 있으며, 보안 평가 및 규정 준수 준수를 위한 핵심 구성요소입니다. </br>
 
+| 개념                        | 설명                                                                                                                     |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Policy (정책)**           | 하나의 **보안 조건이나 규칙**을 정의하는 단일 정책입니다. 특정 조건을 준수하지 않을 경우 **비정상(Non-compliant)** 상태로 표시됩니다.                                 |
+| **Initiative (정책 이니셔티브)** | 여러 개의 Policy를 **묶은 집합 Policy Set**입니다. 일반적으로 하나의 보안 기준(예: ISO 27001, NIST 등)을 구현하기 위해 수십\~수백 개의 Policy를 묶어 사용합니다. |
 
-3. 상단 메뉴에서 필터 버튼을 사용하여 범주를 **보안 센터**로 설정하고 **모두**의 선택을 취소합니다. **정의 유형**에서 **이니셔티브**를 선택하고 **모두**의 선택을 취소합니다.
+| 항목    | **Policy**             | **Initiative**                               |
+| ----- | ---------------------- | -------------------------------------------- |
+| 구성 단위 | 하나의 규칙(예: 스토리지 암호화 필요) | 여러 규칙을 묶은 세트                                 |
+| 목적    | 특정한 하나의 조건을 강제 또는 평가   | 특정 보안 기준을 광범위하게 평가/강제                        |
+| 예시    | "공용 IP가 허용되면 안 된다"     | "Azure Security Benchmark", "NIST SP 800-53" |
+| 사용 위치 | 단독으로 또는 이니셔티브 내 포함     | 보통 Security Policy에 사용됨                      |
+| 적용 방식 | 개별 리소스나 그룹에 직접 적용 가능   | 보안 벤치마크나 규정 준수 프레임워크로 적용됨                    |
+
+3. 상단 메뉴에서 필터 버튼을 사용하여 범주를 **보안 센터\,Security Center**로 설정하고 **모두, All**의 선택을 취소합니다. **정의 유형**에서 **이니셔티브**를 선택하고 **모두**의 선택을 취소합니다.
 4. 이제 Microsoft Defender for Cloud에서 사용되는 기본 제공 이니셔티브를 볼 수 있으며, 일부는 미리 보기 버전입니다.
 5. 각 이니셔티브(정책 열)에 포함된 정책 수를 확인합니다.
 6. 이제 종료합니다.
 
 <img width="1835" height="701" alt="image" src="https://github.com/user-attachments/assets/8d9c60e0-f40b-493b-a119-dd8e5b71ff4f" />
 
-
 ### 연습 3: 권장 사항에 대한 리소스 면제(exemption) 만들기
 
 리소스 면제(exemption)를 사용하면 특정 리소스를 평가에서 제외할 수 있으므로 권장 사항을 더욱 세부적으로 조정할 수 있습니다.
 권장 사항을 사용할 때 오른쪽의 줄임표 메뉴를 클릭하고 '면제 만들기(exemption)'를 선택하여 면제를 만들 수 있습니다.
 
-참고: 면제는 Microsoft Defender for Cloud 고객에게 추가 비용 없이 제공되는 프리미엄 Azure 정책 기능입니다. 다른 사용자에게는 향후 요금이 부과될 수 있습니다.  😱 😱 😱 😱 😱  <- 정말로???????????
+🔖🔖🔖 참고: 면제는 Microsoft Defender for Cloud 고객에게 추가 비용 없이 제공되는 프리미엄 Azure 정책 기능입니다. </br>
+다른 사용자에게는 향후 요금이 부과될 수 있습니다.  😱 😱 😱 😱 😱  <- 정말로???????????
 
 1. **Microsoft Defender for Cloud 블레이드**를 열고 왼쪽 탐색 창에서 **권장 사항**을 선택합니다.
 2. **Management Port**를 입력합니다.
@@ -87,7 +98,7 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 4. **비정상 리소스** 목록에서 현재 리소스인 *asclab-win* 및 *asclab-linux*를 확인합니다.
 5. **asclab-win** 리소스를 선택한 다음 **면제 만들기 --> exemption**를 클릭합니다.
 
-![Create exemption](../Images/asc-management-ports-resource-exemption.gif?raw=true)
+<img width="1834" height="801" alt="image" src="https://github.com/user-attachments/assets/77583a33-b0f6-4b42-90e7-d5cbb5d2aeeb" />
 
 6. **면제 생성** 창이 열립니다.
 * 기본 이름을 유지합니다.
@@ -98,7 +109,9 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 - **저장**을 선택합니다.
   
   ![Modifying Microsoft Defender for Cloud default policy assignment](../Images/Inkedlab3pl6.gif?raw=true)
-  
+
+  <img width="1724" height="1098" alt="image" src="https://github.com/user-attachments/assets/2e270ee7-eda8-4eea-8d67-1b6f258d8df0" />
+
 📌📌📌 알아두면 좋은 정보: <br>
 > **완화됨** - 이 문제는 제안된 것과 다른 도구 또는 프로세스로 처리되었으므로 해당 리소스와 관련이 없습니다.
 > **면제** - 이 리소스에 대한 위험 감수
@@ -115,6 +128,7 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 ### 연습 4: 정책 적용 및 거부 만들기
 
 1. **Microsoft Defender for Cloud 사이드바**에서 **권장 사항**을 선택합니다.
+
 2. **저장소 계정으로의 보안 전송을 활성화해야 합니다**를 검색합니다.
 3. 상단 메뉴 모음에서 **거부** 버튼을 클릭합니다. *적용 및 거부 옵션은 보안 구성 오류를 방지하여 점수를 높이는 또 다른 방법입니다*.
 
@@ -122,6 +136,7 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 > 보안 구성 오류는 보안 사고의 주요 원인입니다.
 
 4. **거부 - 리소스 생성 방지**에서 **Azure 구독 1**(현재 감사 모드로 설정됨)을 선택합니다. 이렇게 하면 지금부터 보안 전송 기능이 활성화되지 않은 저장소 계정은 거부됩니다.
+<img width="1579" height="1140" alt="image" src="https://github.com/user-attachments/assets/0959601e-93be-4641-995c-7b3f7dd03727" />
 
 ![Prevent resource creation](../Images/asc-storage-deny-policy.gif?raw=true)
 
