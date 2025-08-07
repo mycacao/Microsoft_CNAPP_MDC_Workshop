@@ -185,29 +185,40 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 * **만들기**를 클릭합니다.
 
 9. 권장 사항 페이지에서 **비정상 리소스** 탭(asclab-sql-xxx)에 있는 SQL Server 리소스를 **선택**하고 **수정**을 클릭합니다. **리소스 1개 수정**을 클릭합니다. 두 작업을 모두 수행하면 기존 리소스와 새 리소스 모두 감사 대상에 포함될 수 있습니다. SQL Server 감사 기능을 사용하면 서버의 모든 데이터베이스에서 데이터베이스 활동을 추적하고 감사 로그에 저장할 수 있습니다.
-10. 보안 점수 보안 제어 및 권장 사항 목록을 검토하려면 [여기를 클릭하세요](https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/secure-score-security-controls)
+10. 보안 점수 보안 제어 및 권장 사항 목록을 검토하려면 🔔 [여기를 클릭하세요](https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/secure-score-security-controls) 🔔
   
 <br><br>
 ---
 <br><br>
   
-### 연습 5: 사용자 지정 권장 사항 만들기
+### 연습 5: 사용자 지정 권장 사항(Custom Recommendation) 만들기
 
 ***KQL 쿼리를 사용하여 사용자 지정 이니셔티브 만들기***
 이 연습에서는 기존 권장 사항([미리 보기]: 저장소 계정의 공용 액세스를 허용하지 않아야 함)을 사용하여 사용자 지정 권장 사항을 만듭니다.
 1. 구독의 **보안 정책**으로 이동합니다.
 2. 상단의 **+만들기** 드롭다운에서 **권장 사항 만들기**를 선택합니다.
+<img width="1728" height="714" alt="image" src="https://github.com/user-attachments/assets/34d4df0f-266b-4b20-8b46-cd14cf14e044" />
+
 3. **새 권장 사항 만들기** 페이지에서 다음을 입력합니다.
 - 이름: customrecommendation_module3
 - 설명: [미리 보기]: 저장소 계정의 공용 액세스를 허용하지 않아야 함
 - 수정 설명: Azure Storage의 컨테이너 및 BLOB에 대한 익명의 공용 읽기 액세스는 데이터를 공유하는 편리한 방법이지만 보안 위험을 초래할 수 있습니다. 원치 않는 익명 액세스로 인한 데이터 침해를 방지하기 위해 Microsoft는 상황에 따라 필요하지 않은 경우 저장소 계정에 대한 공용 액세스를 차단할 것을 권장합니다.
 - 심각도: 높음
 - 보안 문제: 익명 액세스
-  
+
+<img width="952" height="590" alt="image" src="https://github.com/user-attachments/assets/ce0de5a2-93ab-4d10-87f5-e84ea8a34d6b" />
+
 4. 쿼리 편집기를 사용하여 KQL 쿼리를 작성하거나 테스트합니다. 완료되면 **권장 사항 쿼리**에 쿼리를 추가합니다.
-7. **다음**을 선택합니다. **저장**을 클릭합니다.
-8. 몇 분 후 구독 아래의 **보안 정책**으로 돌아갑니다.
-9. **권장 사항** 탭을 클릭하면 방금 만든 사용자 지정 정책이 표시됩니다.
+
+<img width="1645" height="953" alt="image" src="https://github.com/user-attachments/assets/7465a05e-e41e-4a61-b5a7-c8fcfb319fb0" />
+
+5. **다음**을 선택합니다. **저장**을 클릭합니다.
+<img width="950" height="506" alt="image" src="https://github.com/user-attachments/assets/0f1c11ad-8b78-4ff3-be82-de72972b4283" />
+
+6. 몇 분 후 구독 아래의 **보안 정책**으로 돌아갑니다.
+7. **권장 사항** 탭을 클릭하면 방금 만든 사용자 지정 정책이 표시됩니다.
+
+<img width="1406" height="571" alt="image" src="https://github.com/user-attachments/assets/d7396ad8-a6a6-4080-b21d-c1ed8601432b" />
 
 이 [페이지](https://learn.microsoft.com/en-us/azure/defender-for-cloud/create-custom-recommendations)를 방문하여 사용자 지정 권장 사항 및 표준에 대해 자세히 알아보세요.
   
