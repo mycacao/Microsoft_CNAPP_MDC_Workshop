@@ -126,22 +126,22 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 
 <img width="1801" height="1031" alt="image" src="https://github.com/user-attachments/assets/bd7a9e19-391a-4eb9-9149-13debe5a4505" />
 
-📌📌📌 알아두면 좋은 정보
-> **완화됨** - 이 문제는 제안된 것과 다른 도구 또는 프로세스로 처리되었으므로 해당 리소스와 관련이 없습니다.
+📌 [참고] 완화 한다는것과 면제(또는 예외,제외로 번역) 한다는 것 의 차이점
+> **완화** - 이 문제는 제안된 것과 다른 도구 또는 프로세스로 처리되었으므로 해당 리소스와 관련이 없습니다.
 > **면제** - 이 리소스에 대한 위험 감수
 
 7. 면제가 적용되는 데 최대 **30분**이 소요될 수 있습니다. 면제 적용 후:
 - 리소스는 보안 점수에 영향을 미치지 않습니다.
 - 리소스는 권장 사항 세부 정보 페이지의 '해당 없음' 탭에 나열됩니다.
 - 권장 사항 세부 정보 페이지 상단의 정보 스트립에 면제된 리소스 수가 **1**로 표시됩니다.
-- 
+
 <img width="1807" height="699" alt="image" src="https://github.com/user-attachments/assets/6543c12f-32cd-4c32-8d09-b33f14bf8091" />
 
 8. **해당 없음** 탭을 열어 면제된 리소스를 검토합니다. 리소스와 사유/설명 값을 확인할 수 있습니다.
 9. 면제 규칙은 Azure Policy 기능을 기반으로 합니다. 따라서 Azure Policy 블레이드에서도 모든 면제를 추적할 수 있습니다.
 10. **Azure Policy 블레이드**로 이동하여 왼쪽 탐색 창에서 **면제**를 선택합니다. 새로 만든 면제 항목이 거기에 나열되어 있는지 확인하세요.
 
-📌📌📌 참고로, 여러개를 한번에 예외 적용할 수 있습니다.
+📌 [참고] 여러개를 한번에 예외 적용할 수 있습니다.
 <img width="1852" height="885" alt="image" src="https://github.com/user-attachments/assets/5fd80cc2-5fdf-4531-95c1-958bcd646340" />
 
 <br><br>
@@ -151,23 +151,31 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 ### 연습 4: 정책 적용 및 거부 만들기
 
 1. **Microsoft Defender for Cloud 사이드바**에서 **권장 사항**을 선택합니다.
-
 2. **저장소 계정으로의 보안 전송을 활성화해야 합니다**를 검색합니다.
+   
+<img width="1622" height="748" alt="image" src="https://github.com/user-attachments/assets/b1b80961-67a5-4471-83ba-c4e51ed02000" />
+
 3. 상단 메뉴 모음에서 **거부** 버튼을 클릭합니다. *적용 및 거부 옵션은 보안 구성 오류를 방지하여 점수를 높이는 또 다른 방법입니다*.
 
-> ❗ 중요: <br>
+> ❗ [중요] 
 > 보안 구성 오류는 보안 사고의 주요 원인입니다.
 
 4. **거부 - 리소스 생성 방지**에서 **Azure 구독 1**(현재 감사 모드로 설정됨)을 선택합니다. 이렇게 하면 지금부터 보안 전송 기능이 활성화되지 않은 저장소 계정은 거부됩니다.
-<img width="1579" height="1140" alt="image" src="https://github.com/user-attachments/assets/0959601e-93be-4641-995c-7b3f7dd03727" />
 
-![Prevent resource creation](../Images/asc-storage-deny-policy.gif?raw=true)
+<img width="1647" height="1026" alt="image" src="https://github.com/user-attachments/assets/d85d3499-48f9-4b92-adf6-5f77d23e9b85" />
+
+
+다시 감사로 변경하려면 아래와 같이 합니다.
+<img width="1819" height="1028" alt="image" src="https://github.com/user-attachments/assets/00a605c8-e5a0-475d-9e71-948ff41d2c58" />
 
 5. **권장 사항** 보기로 돌아가서 거부 전용 필터를 제거합니다. 검색 영역에 **감사**를 입력합니다. **SQL 서버에서 감사를 활성화해야 합니다**라는 권장 사항을 클릭합니다.
 6. 
 ![Auditing on SQL server should be enabled](../Images/asc-auditing-sql.gif?raw=true)
 
 7. 권장 사항 페이지의 상단 메뉴 모음에서 **적용** 버튼을 클릭합니다. 이 옵션을 사용하면 Azure 정책의 DeployIfNotExist 효과를 활용하여 비준수 리소스가 생성되는 즉시 자동으로 수정할 수 있습니다.
+
+<img width="1830" height="1044" alt="image" src="https://github.com/user-attachments/assets/c1309efd-a7be-4e8c-a141-b69cd54052a2" />
+
 8. 모든 정책 구성 옵션이 포함된 구성 창이 열리면 다음 구성 설정을 선택합니다.
 
 * 범위에서 구독을 선택합니다. **선택**을 클릭합니다.
@@ -177,7 +185,7 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 * **만들기**를 클릭합니다.
 
 9. 권장 사항 페이지에서 **비정상 리소스** 탭(asclab-sql-xxx)에 있는 SQL Server 리소스를 **선택**하고 **수정**을 클릭합니다. **리소스 1개 수정**을 클릭합니다. 두 작업을 모두 수행하면 기존 리소스와 새 리소스 모두 감사 대상에 포함될 수 있습니다. SQL Server 감사 기능을 사용하면 서버의 모든 데이터베이스에서 데이터베이스 활동을 추적하고 감사 로그에 저장할 수 있습니다.
-10. 보안 제어 및 권장 사항 목록을 검토하려면 [여기를 클릭하세요](https://learn.microsoft.com/en-us/azure/defender-for-cloud/secure-score-security-controls#secure-score-controls)
+10. 보안 점수 보안 제어 및 권장 사항 목록을 검토하려면 [여기를 클릭하세요](https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/secure-score-security-controls)
   
 <br><br>
 ---
