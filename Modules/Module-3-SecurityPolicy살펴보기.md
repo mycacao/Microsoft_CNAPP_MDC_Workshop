@@ -220,10 +220,10 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 
 <img width="1406" height="571" alt="image" src="https://github.com/user-attachments/assets/d7396ad8-a6a6-4080-b21d-c1ed8601432b" />
 
-이 [페이지](https://learn.microsoft.com/en-us/azure/defender-for-cloud/create-custom-recommendations)를 방문하여 사용자 지정 권장 사항 및 표준에 대해 자세히 알아보세요.
+이 [페이지](https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/create-custom-recommendations)를 방문하여 사용자 지정 권장 사항 및 표준에 대해 자세히 알아보세요.
   
 <br><br>
 ---
 <br><br>
 
-### 다음 랩을 계속 진행하세요: [모듈 4 - 규정 준수](../Modules/Module-4-Regulatory-Compliance.md)
+### 다음 랩을 계속 진행하세요: [모듈 4 - 규정 준수](../Modules/Module-4-RegulationCompliance살펴보기.md)
