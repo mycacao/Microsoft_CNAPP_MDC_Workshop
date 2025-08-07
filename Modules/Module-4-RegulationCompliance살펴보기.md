@@ -176,6 +176,30 @@ AWS 또는 GCP에서 표준을 할당하려면 AWS 또는 GCP 연결을 선택�
 <img width="1636" height="1050" alt="image" src="https://github.com/user-attachments/assets/3449a1ea-2aca-4800-a715-138127dd04d1" />
 <img width="1553" height="1025" alt="image" src="https://github.com/user-attachments/assets/3816282c-0604-4ffa-860b-96a1a9a385ad" />
 
+
+🎴[참고] Azure Policy 와 MDC 의 Recommendation 차이는 무엇일까?
+
+모두 Azure 환경의 보안 및 규정 준수를 강화하기 위한 도구이지만, 각각 다른 역할을 합니다. 
+Azure Policy는 주로 리소스 생성 및 구성을 규제하여 보안 정책을 적용하고, 
+MDC 클라우드 워크로드의 보안 태세를 모니터링하고 개선하기 위한 Recommendation을 제공합니다. 
+
+
+> 결론적으로, Azure Policy는 인프라 차원의 보안 규칙을 설정하고 enforces하여 리소스 생성 및 구성을 규제하는 반면, 
+> MDC는 클라우드 환경의 보안 태세를 평가하고 개선하기 위한 권장 사항을 제공하여 전반적인 보안을 강화합니다.
+
+| 항목         | **Azure Policy**                    | **Defender for Cloud Recommendation** |
+| ---------- | ----------------------------------- | ------------------------------------- |
+| **목적**     | 거버넌스 및 규정 준수 강제                     | 보안 상태 평가 및 개선 제안                      |
+| **중심 기능**  | 리소스 구성 상태를 검사하고, 제어(거부, 수정, 감사 등)   | 보안 위협을 줄이기 위한 권장 조치 제공                |
+| **기반 엔진**  | Azure Policy 엔진                     | Microsoft Defender for Cloud (ASC)    |
+| **KQL 사용** | ❌ (ARM 조건 기반)                       | ✅ 일부 보안 분석은 KQL로 표현됨                  |
+| **자동 수정**  | ✅ 수정 정책 사용 시 가능                     | ✅ 일부 권장 사항은 "Quick Fix"로 자동 적용 가능     |
+| **알림/리포트** | 준수 상태 대시보드 제공                       | 보안 점수(Security Score), 워크북 등에서 제공     |
+| **사용 위치**  | Azure Policy 메뉴, Azure Blueprints 등 | Defender for Cloud > Recommendations  |
+| **커버 범위**  | 구성 관련 전반 (태그, 크기, SKU 등 포함)         | 보안 중심 (방화벽, 암호화, 포트 노출 등)             |
+| **예시**     | "VM은 특정 위치에서만 생성되어야 한다"             | "VM에 Endpoint Protection이 설치되어야 한다"   |
+
+
 <br><br>
 ---
 <br><br>
