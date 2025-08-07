@@ -12,10 +12,11 @@
 - 이번 랩을 완료하면 예외, 정책 적용 및 사용자 지정 정책을 만드는 방법을 이해할수 있습니다.
 
 #### 필수 구성 요소
-Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요합니다. 무료 구독을 시작하려면 [모듈 1](https://github.com/mycacao/Microsoft_CNAPP_MDC_Workshop/blob/main/Modules/Module-1-MDC%ED%99%98%EA%B2%BD%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0.md)을 진행하세요.
+Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요합니다. 무료 구독을 시작하려면 [모듈 1](https://github.com/mycacao/Microsoft_CNAPP_MDC_Workshop/blob/main/Modules/Module-1-MDC%ED%99%98%EA%B2%BD%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0.md)을 진행하세요.  
 
+<br><br>
 ---
-
+<br><br>
 #### Azure Policy 란 무엇인가?
 - Azure Policy는 Azure 환경에서 리소스가 조직 표준 및 규정 준수 요구사항을 충족하는지 감사하고 강제하는 서비스입니다.
 - 즉, Azure 리소스에 대한 규칙을 정의하고, 해당 규칙을 기반으로 리소스가 생성되거나 수정될 때 자동으로 평가하여 규정 준수 여부를 확인하고, 필요에 따라 조치를 취할 수 있도록 합니다
@@ -27,9 +28,11 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 > 정책 할당: 특정 범위(관리 그룹, 구독, 리소스 그룹 등)에 정책을 할당하여 해당 범위 내의 모든 리소스에 적용합니다. </br>
 > 규정 준수 평가: 리소스가 정책을 준수하는지 주기적으로 평가합니다. </br>
 > 효과: 정책 위반 시 리소스에 대한 조치(예: 거부, 수정, 감사)를 정의합니다.  </br>
-
+  
+<br><br>
 ---
-
+<br><br>
+  
 ### 연습 1: MDC 정책(Policy) 개요
 
 1. Microsoft Defender for Cloud 블레이드의 왼쪽 탐색 창에서 **환경 설정**을 클릭합니다.
@@ -54,21 +57,27 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 
 📌📌📌 알아두면 좋은 정보 <br>
 <img width="1058" height="550" alt="image" src="https://github.com/user-attachments/assets/25f86ae6-4d19-47a7-95fb-6fbc82ad29fa" />
-
+  
+<br><br>
 ---
+<br><br>
+    
+### 연습 2: Azure 정책(Policy) 살펴보기  
+1. Azure Portal에서 **정책 블레이드**로 이동합니다. 상단의 검색 상자에서 "정책"을 검색하거나 [정책](https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Overview) 로 이동할 수 있습니다.     
+2. 왼쪽 탐색 창의 **작성 또는 제작, Authoring** 섹션에서 **정의**를 클릭하여 기본 제공 정책 정의 및 이니셔티브를 살펴보세요.     
 
-### 연습 2: Azure 정책(Policy) 살펴보기
-1. Azure Portal에서 **정책 블레이드**로 이동합니다. 상단의 검색 상자에서 "정책"을 검색하거나 [정책](https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Overview) 로 이동할 수 있습니다.
-2. 왼쪽 탐색 창의 **작성 또는 제작, Authoring** 섹션에서 **정의**를 클릭하여 기본 제공 정책 정의 및 이니셔티브를 살펴보세요.
+<img width="1672" height="775" alt="image" src="https://github.com/user-attachments/assets/b20aed01-6c24-42e8-881b-8997770d5ff3" />
 
-✨✨✨ 참고, 정책(Policy) 과 이니셔티브(Initiative) 차이점은? AI 가 잘 알려주네요 </br>
-> (MDC)에서 사용하는 Policy와 Initiative는 모두 Azure Policy의 개념에 기반을 두고 있으며, 보안 평가 및 규정 준수 준수를 위한 핵심 구성요소입니다. </br>
-
+✨✨✨ 참고, 정책(Policy) 과 이니셔티브(Initiative) 차이점은? AI 가 잘 알려주네요 <br>
+>> MDC에서 사용하는 Policy와 Initiative는 모두 Azure Policy의 개념에 기반을 두고 있으며, 보안 평가 및 규정 준수 준수를 위한 핵심 구성요소입니다.
+  
 | 개념                        | 설명                                                                                                                     |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | **Policy (정책)**           | 하나의 **보안 조건이나 규칙**을 정의하는 단일 정책입니다. 특정 조건을 준수하지 않을 경우 **비정상(Non-compliant)** 상태로 표시됩니다.                                 |
 | **Initiative (정책 이니셔티브)** | 여러 개의 Policy를 **묶은 집합 Policy Set**입니다. 일반적으로 하나의 보안 기준(예: ISO 27001, NIST 등)을 구현하기 위해 수십\~수백 개의 Policy를 묶어 사용합니다. |
 
+>> 다시한번 구체적으로 비교하면 다음과 같습니다.
+  
 | 항목    | **Policy**             | **Initiative**                               |
 | ----- | ---------------------- | -------------------------------------------- |
 | 구성 단위 | 하나의 규칙(예: 스토리지 암호화 필요) | 여러 규칙을 묶은 세트                                 |
@@ -76,15 +85,19 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 | 예시    | "공용 IP가 허용되면 안 된다"     | "Azure Security Benchmark", "NIST SP 800-53" |
 | 사용 위치 | 단독으로 또는 이니셔티브 내 포함     | 보통 Security Policy에 사용됨                      |
 | 적용 방식 | 개별 리소스나 그룹에 직접 적용 가능   | 보안 벤치마크나 규정 준수 프레임워크로 적용됨                    |
-
 3. 상단 메뉴에서 필터 버튼을 사용하여 범주를 **보안 센터\,Security Center**로 설정하고 **모두, All**의 선택을 취소합니다. **정의 유형**에서 **이니셔티브**를 선택하고 **모두**의 선택을 취소합니다.
 4. 이제 Microsoft Defender for Cloud에서 사용되는 기본 제공 이니셔티브를 볼 수 있으며, 일부는 미리 보기 버전입니다.
 5. 각 이니셔티브(정책 열)에 포함된 정책 수를 확인합니다.
 6. 이제 종료합니다.
 
 <img width="1835" height="701" alt="image" src="https://github.com/user-attachments/assets/8d9c60e0-f40b-493b-a119-dd8e5b71ff4f" />
+  
+<br><br>
+---
+<br><br>
+  
 
-### 연습 3: 권장 사항에 대한 리소스 면제(exemption) 만들기
+### 연습 3: 권장 사항에 대한 리소스 예외(exemption) 만들기
 
 리소스 면제(exemption)를 사용하면 특정 리소스를 평가에서 제외할 수 있으므로 권장 사항을 더욱 세부적으로 조정할 수 있습니다.
 권장 사항을 사용할 때 오른쪽의 줄임표 메뉴를 클릭하고 '면제 만들기(exemption)'를 선택하여 면제를 만들 수 있습니다.
@@ -93,26 +106,27 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 다른 사용자에게는 향후 요금이 부과될 수 있습니다.  😱 😱 😱 😱 😱  <- 정말로???????????
 
 1. **Microsoft Defender for Cloud 블레이드**를 열고 왼쪽 탐색 창에서 **권장 사항**을 선택합니다.
-2. **Management Port**를 입력합니다.
-3. **가상 머신에서 관리 포트를 닫아야 합니다** 권장 사항을 선택합니다.
-4. **비정상 리소스** 목록에서 현재 리소스인 *asclab-win* 및 *asclab-linux*를 확인합니다.
-5. **asclab-win** 리소스를 선택한 다음 **면제 만들기 --> exemption**를 클릭합니다.
+2. **Management Port** 또는 **가상 머신** (제 테스트환경에서는 가상머신으로 검색) 를 입력합니다.
+3. **가상 머신에서 관리 포트를 닫아야 합니다** 또는 유사한 권장 사항(아래 캡쳐 이미지 참고) 을 선택합니다.<br>
 
-<img width="1834" height="801" alt="image" src="https://github.com/user-attachments/assets/77583a33-b0f6-4b42-90e7-d5cbb5d2aeeb" />
+<img width="1606" height="910" alt="image" src="https://github.com/user-attachments/assets/40962690-1e64-4489-b44b-b730e0d599e0" />
 
-6. **면제 생성** 창이 열립니다.
+<br>
+4. **영향을 받는 리소스** 목록에서 현재 리소스인 *asclab-win* 및 *asclab-linux* 또는 아무거나 선택합니다.
+5. **asclab-win** 리소스를 선택한 다음 **예외 --> exemption**를 클릭합니다.
+
+<img width="1575" height="987" alt="image" src="https://github.com/user-attachments/assets/9459562f-8a8a-4b7e-a28b-ff690e67d951" />
+
+6. **예외 또는 제외 또는 명제 생성** 창이 열립니다.
 * 기본 이름을 유지합니다.
 * 만료 버튼을 클릭하고 날짜/시간을 이틀 후 오전 12시로 설정합니다.
-
 - 면제 범주로 **면제**를 선택합니다.
-- 설명을 입력합니다: **면제 기능 테스트 - 모듈 3**.
+- 설명을 입력합니다: **예외 면제 기능 테스트 - 모듈 3**.
 - **저장**을 선택합니다.
-  
-  ![Modifying Microsoft Defender for Cloud default policy assignment](../Images/Inkedlab3pl6.gif?raw=true)
 
-  <img width="1724" height="1098" alt="image" src="https://github.com/user-attachments/assets/2e270ee7-eda8-4eea-8d67-1b6f258d8df0" />
+<img width="1801" height="1031" alt="image" src="https://github.com/user-attachments/assets/bd7a9e19-391a-4eb9-9149-13debe5a4505" />
 
-📌📌📌 알아두면 좋은 정보: <br>
+📌📌📌 알아두면 좋은 정보
 > **완화됨** - 이 문제는 제안된 것과 다른 도구 또는 프로세스로 처리되었으므로 해당 리소스와 관련이 없습니다.
 > **면제** - 이 리소스에 대한 위험 감수
 
@@ -120,11 +134,20 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 - 리소스는 보안 점수에 영향을 미치지 않습니다.
 - 리소스는 권장 사항 세부 정보 페이지의 '해당 없음' 탭에 나열됩니다.
 - 권장 사항 세부 정보 페이지 상단의 정보 스트립에 면제된 리소스 수가 **1**로 표시됩니다.
+- 
+<img width="1807" height="699" alt="image" src="https://github.com/user-attachments/assets/6543c12f-32cd-4c32-8d09-b33f14bf8091" />
 
 8. **해당 없음** 탭을 열어 면제된 리소스를 검토합니다. 리소스와 사유/설명 값을 확인할 수 있습니다.
 9. 면제 규칙은 Azure Policy 기능을 기반으로 합니다. 따라서 Azure Policy 블레이드에서도 모든 면제를 추적할 수 있습니다.
 10. **Azure Policy 블레이드**로 이동하여 왼쪽 탐색 창에서 **면제**를 선택합니다. 새로 만든 면제 항목이 거기에 나열되어 있는지 확인하세요.
 
+📌📌📌 참고로, 여러개를 한번에 예외 적용할 수 있습니다.
+<img width="1852" height="885" alt="image" src="https://github.com/user-attachments/assets/5fd80cc2-5fdf-4531-95c1-958bcd646340" />
+
+<br><br>
+---
+<br><br>
+  
 ### 연습 4: 정책 적용 및 거부 만들기
 
 1. **Microsoft Defender for Cloud 사이드바**에서 **권장 사항**을 선택합니다.
@@ -155,7 +178,11 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 
 9. 권장 사항 페이지에서 **비정상 리소스** 탭(asclab-sql-xxx)에 있는 SQL Server 리소스를 **선택**하고 **수정**을 클릭합니다. **리소스 1개 수정**을 클릭합니다. 두 작업을 모두 수행하면 기존 리소스와 새 리소스 모두 감사 대상에 포함될 수 있습니다. SQL Server 감사 기능을 사용하면 서버의 모든 데이터베이스에서 데이터베이스 활동을 추적하고 감사 로그에 저장할 수 있습니다.
 10. 보안 제어 및 권장 사항 목록을 검토하려면 [여기를 클릭하세요](https://learn.microsoft.com/en-us/azure/defender-for-cloud/secure-score-security-controls#secure-score-controls)
-
+  
+<br><br>
+---
+<br><br>
+  
 ### 연습 5: 사용자 지정 권장 사항 만들기
 
 ***KQL 쿼리를 사용하여 사용자 지정 이니셔티브 만들기***
@@ -175,5 +202,9 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 9. **권장 사항** 탭을 클릭하면 방금 만든 사용자 지정 정책이 표시됩니다.
 
 이 [페이지](https://learn.microsoft.com/en-us/azure/defender-for-cloud/create-custom-recommendations)를 방문하여 사용자 지정 권장 사항 및 표준에 대해 자세히 알아보세요.
+  
+<br><br>
+---
+<br><br>
 
 ### 다음 랩을 계속 진행하세요: [모듈 4 - 규정 준수](../Modules/Module-4-Regulatory-Compliance.md)
