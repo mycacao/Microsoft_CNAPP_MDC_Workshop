@@ -104,12 +104,20 @@ AWS 또는 GCP에서 표준을 할당하려면 AWS 또는 GCP 연결을 선택�
 3. 새 정의의 위치로 범위를 선택합니다. 할당된 관리 그룹이 있는 경우 해당 그룹을 선택하는 것이 좋지만, 이 시나리오에서는 구독을 범위로 선택합니다.
 4. **보안 정책**을 선택합니다.
 5. 상단의 **+만들기** 드롭다운에서 **+사용자 지정 표준**을 클릭합니다.
-6. "모듈 4 사용자 지정 표준"과 같은 이름을 입력하세요.
+
+<img width="1352" height="427" alt="image" src="https://github.com/user-attachments/assets/2cb85142-5046-42b9-9929-30f321d54ecb" />
+
+
+6. "사용자 정의 보안 표준 - 그룹 보안"과 같은 이름을 입력하세요.
+<img width="756" height="326" alt="image" src="https://github.com/user-attachments/assets/e30d9d0a-d2e4-4773-8d7c-a920b5458347" />
+
 7. 설명을 추가하세요.
 8. 이제 이 표준에 포함할 다양한 권장 사항을 선택할 수 있습니다.
 9. **만들기**를 클릭하세요.
 10. **보안 정책** 페이지로 리디렉션됩니다. **상태**별로 정렬하여 새로 생성된 표준이 구독에 적용된 것을 확인하세요.
-![module4_customstandard](https://github.com/Azure/Microsoft-Defender-for-Cloud/assets/45104504/aba2680c-9d1e-4fae-bb98-63ea3627c9a4)
+<img width="1272" height="375" alt="image" src="https://github.com/user-attachments/assets/0bafa569-44bf-4ca6-ab29-c173f31994bb" />
+
+
 
 <br><br>
 ---
@@ -120,9 +128,9 @@ AWS 또는 GCP에서 표준을 할당하려면 AWS 또는 GCP 연결을 선택�
 이제 Microsoft Defender for Cloud에서 규정 준수 표준에 대한 감사 보고서를 쉽게 만들고 다운로드할 수 있습니다.
 1. Microsoft Defender for Cloud의 사이드바에서 규정 준수를 선택합니다.
 2. 페이지 상단의 감사 보고서를 클릭합니다.
-![규정 준수 평가 및 표준](../Images/lab4rc6.jpg?raw=true)
+<img width="1492" height="868" alt="image" src="https://github.com/user-attachments/assets/9622b023-2af8-4d7e-bedb-9389cd7b80d5" />
 3. 탭에서 PCI를 선택하고 2021 - Azure PCI 3DS 1.0 패키지를 다운로드한 후 다운로드를 클릭합니다.
-![규정 준수 평가 및 표준](../Images/lab4rc7.jpg?raw=true)
+<img width="1721" height="643" alt="image" src="https://github.com/user-attachments/assets/70cb840b-1601-4dfc-a8e7-7553f9cc0dc3" />
 4. 나타나는 개인정보처리방침 팝업에서 다운로드를 클릭합니다.
 이제 감사 보고서가 다운로드되었습니다.
 
@@ -143,17 +151,30 @@ AWS 또는 GCP에서 표준을 할당하려면 AWS 또는 GCP 연결을 선택�
 7. 대상 작업 공간과 리소스 그룹을 이전에 생성한 리소스 그룹으로 선택합니다.
 9. 저장을 선택합니다. Sentinel 알림 커넥터가 이미 활성화되었다는 메시지가 표시될 수 있습니다. **확인**을 클릭합니다.
 10. 첫 번째 스냅샷이 생성될 때까지 기다립니다.
+<img width="1753" height="1022" alt="image" src="https://github.com/user-attachments/assets/dffd3892-c2c8-4d5f-b028-6dc2534a6bf1" />
+
+🎴[참고] Micrisoft Sentinel (SIEM) 에서 확인 
+
+<img width="1647" height="997" alt="image" src="https://github.com/user-attachments/assets/997107ba-6b58-44a5-afc5-27fbcf5d9af7" />
+<img width="1837" height="966" alt="image" src="https://github.com/user-attachments/assets/34c2cd82-c9ec-46a5-bee5-0b6f3b931c2f" />
+
 
 시간 경과에 따른 규정 준수 대시보드
 1. Microsoft Defender for Cloud로 이동하여 왼쪽 탐색 창의 **일반** 섹션에서 **통합 문서** 단추를 선택합니다.
 2. **Defender for Cloud** 아래에 있는 **시간 경과에 따른 규정 준수** 통합 문서를 선택합니다.
+<img width="1801" height="846" alt="image" src="https://github.com/user-attachments/assets/110eaa9a-6e63-4b6b-89fe-6b6412789e08" />
+
+
 3. 작업 영역에서 **asclab-la-XXXXXXXXXX**를 선택합니다.
 4. 구독에서 구독을 선택합니다.
 5. 표준 이름에서 **모두**를 선택하면 통합 문서가 표시됩니다.
-![규정 준수 평가 및 표준](../Images/lab4rc11.jpg?raw=true)
+<img width="1815" height="1047" alt="image" src="https://github.com/user-attachments/assets/80c4f996-a0c9-4597-b7f1-fe2ee1b708b1" />
+
+
 >참고 1: 시간 경과에 따른 규정 준수 통합 문서가 작동하려면 Log Analytics 작업 영역으로의 연속 내보내기 설정 연습을 완료해야 합니다.
 >참고 2: 아래 오류가 표시되는 경우, 연속 내보내기를 통해 이 통합 문서에 데이터가 입력될 때까지 일주일 정도 기다려야 합니다.
-![규제 준수 평가 및 표준](../Images/lab4rc12.gif?raw=true)
+<img width="1636" height="1050" alt="image" src="https://github.com/user-attachments/assets/3449a1ea-2aca-4800-a715-138127dd04d1" />
+<img width="1553" height="1025" alt="image" src="https://github.com/user-attachments/assets/3816282c-0604-4ffa-860b-96a1a9a385ad" />
 
 <br><br>
 ---
