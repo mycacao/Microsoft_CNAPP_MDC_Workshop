@@ -6,19 +6,36 @@
 #### ⌛ 이 랩의 예상 완료 시간: 60분
 
 ## 목표
-이 연습에서는 Microsoft Defender for Cloud의 현재 규정 준수 기능을 안내합니다. Defender for Cloud는 규정 준수 대시보드를 통해 특정 표준에 따라 리소스의 상태를 평가하여 고객이 이러한 요구 사항을 충족할 수 있도록 지원합니다. 이 연습에서는 이 기능을 안내하지만, 공식 문서는 이 [페이지](https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/regulatory-compliance-dashboard) 를 참조하세요.
+이 랩에서는 MDC 의 현재 제공하는 규정 준수 기능을 안내합니다. MDC는 규정 준수 대시보드를 통해 특정 표준(Standard)에 따라 리소스의 상태를 평가하여 고객이 이러한 요구 사항을 충족할 수 있도록 지원합니다. <br>
+이 랩은 기능 위주로 안내하지만, 공식 문서는 이 [페이지](https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/regulatory-compliance-dashboard) 를 참고하세요
+
+<br><br>
+---
+<br><br>
 
 ### 연습 1: 규정 준수 대시보드 이해
 
-1. **Microsoft Defender for Cloud 기본 대시보드**에서 **규정 준수** 타일을 선택합니다(이 타일은 클라우드 보안 아래의 사이드바에서도 사용할 수 있습니다).
+1. **MDC 기본 대시보드**에서 **규정 준수** 타일을 선택합니다 (이 타일은 클라우드 보안 아래의 사이드바에서도 사용할 수 있습니다).
 2. 규정 준수 대시보드가 열립니다. 이 페이지에서 현재 구독에 할당된 규정 준수 표준을 확인할 수 있습니다.
 3. 상단 스트립에서 Microsoft 클라우드 보안 벤치마크에 대한 **통과된 컨트롤**의 수를 확인하세요.
+   
+<img width="1707" height="980" alt="image" src="https://github.com/user-attachments/assets/3d3949cc-d12f-440e-a2f3-032835ebd302" />
+<br><br>
+<img width="1275" height="945" alt="image" src="https://github.com/user-attachments/assets/21e5be9a-18fb-43b9-ae1e-72978d6a3402" />
+
+<br><br>
+---
+<br><br>
 
 ### 연습 2: Azure 및 멀티클라우드에 새로운 표준 추가
 
 IST SP 800-53 R4, SWIFT CSP CSCF-v2020, 영국 공식 표준 등과 같은 추가 산업 표준(규정 준수 패키지로 표시됨)을 추가할 수 있습니다.
 
 1. 규정 준수의 상단 메뉴 모음에서 **규정 준수 정책 관리**를 선택합니다.
+
+
+<img width="1787" height="766" alt="image" src="https://github.com/user-attachments/assets/16f8921a-9bc4-4b22-b1f7-061bf9bae661" />
+
 2. 구독을 선택합니다.
 <br> 참고: <br>
 AWS 또는 GCP에서 표준을 할당하려면 AWS 또는 GCP 연결을 선택한 다음 왼쪽의 **보안 정책**으로 바로 이동합니다. 세 클라우드 모두에서 사용 가능한 규정 준수 표준은 [여기](https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-regulatory-compliance-standards#available-compliance-standards)에 문서화되어 있습니다.
@@ -28,17 +45,29 @@ AWS 또는 GCP에서 표준을 할당하려면 AWS 또는 GCP 연결을 선택�
 4. **표준** 탭에서 *CIS Microsoft Azure Foundations Benchmark v2.0.0*을 찾습니다.
 5. 표준을 선택합니다.
 6. **감사** 및 **수동** 정책 정의의 개수를 확인하세요.
+<img width="1656" height="745" alt="image" src="https://github.com/user-attachments/assets/617ca0ff-a36f-45e3-b24a-906719988883" />
+
 **감사 효과**: 리소스가 특정 정책 정의를 준수하지 않으면 정책은 해당 리소스를 **비준수**로 표시하고 활동 로그에 경고를 생성하지만 실제 리소스에 대한 조치는 취하지 않습니다. 감사 효과에 대한 자세한 내용은 이 [페이지](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-audit)를 참조하세요.
 **수동 효과**: 일부 작업이나 작업을 자동화할 수 없거나 리소스의 규정 준수 상태 업데이트가 필요한 경우 수동 증명이 필요합니다. 자세한 내용은 이 [페이지](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-manual)를 참조하세요.
-7. 검색 상자에서 **순환**을 검색합니다. **키에는 생성 후 지정된 일수 내에 순환이 예약되도록 하는 순환 정책이 있어야 합니다.**라는 메시지가 표시됩니다. **추가 매개변수**가 **구성됨**으로 설정되어 있습니다.
+7. 검색 상자에서 **순환 또는 rotation **을 검색합니다. **키에는 생성 후 지정된 일수 내에 순환이 예약되도록 하는 순환 정책이 있어야 합니다.**라는 메시지가 표시됩니다. **추가 매개변수**가 **구성됨**으로 설정되어 있습니다.
 8. 줄임표를 클릭하여 **정책 정의 보기**를 클릭합니다.
+<img width="1821" height="478" alt="image" src="https://github.com/user-attachments/assets/fa0a3463-e05c-4576-9ed3-25c34c5e6919" />
+<img width="1533" height="978" alt="image" src="https://github.com/user-attachments/assets/479f8d7c-be7e-4e5a-9c45-74c8ae6a6cac" />
+
 이 표준을 범위(구독 또는 관리 그룹)에 할당하면 이 정책 정의에 따라 키 순환 최대 일 수 값을 입력하라는 메시지가 표시됩니다.
 9. **표준** 페이지로 돌아가서 *CIS Microsoft Azure Foundations Benchmark v2.0.0*에 대해 **켜짐** 토글을 클릭합니다.
 10. 조직의 정책을 준수하는 값을 입력하거나, 이 랩 목적으로만 **30**을 입력합니다.
 11. 몇 시간 후, 이 새 표준이 기본 MCSB 옆의 **규정 준수** 대시보드에 표시됩니다.
+<img width="1632" height="725" alt="image" src="https://github.com/user-attachments/assets/55973eb2-05fb-4553-b22d-c3b425536456" />
+
 > ❗ 중요: <br>
 > 변경 사항이 적용되기까지 시간이 다소 소요됩니다(2~3시간).
+
   
+<br><br>
+---
+<br><br>
+
 ### 연습 3: 벤치마크 살펴보기
 1. 연습 2에서 선택한 표준으로 이동합니다. 이 랩에서는 *CIS Microsoft Azure Foundations Benchmark v2.0.0*을 선택했습니다. 평가에 매핑된 다양한 규정 준수 제어를 확인하세요.
 2. **저장소 계정으로의 보안 전송을 활성화해야 합니다.**를 검색합니다.
@@ -48,6 +77,11 @@ AWS 또는 GCP에서 표준을 할당하려면 AWS 또는 GCP 연결을 선택�
 6. 대시보드로 돌아갑니다. 규정 표준 준수 상태를 PDF 보고서 또는 CSV 파일로 내보낼 수 있습니다. 상단 메뉴 모음에서 **보고서 다운로드**를 선택합니다.
 7. 보고서 표준 드롭다운 메뉴에서 *CIS Microsoft Azure Foundations Benchmark v2.0.0* 및 **PDF**를 선택합니다. **다운로드**를 클릭하세요.
 8. 로컬 PDF 파일이 컴퓨터에 저장되었습니다. **CIS Microsoft Azure Foundations Benchmark v2.0.0**을 열고 규정 준수 보고서를 살펴보세요. 이 보고서는 사용자 환경에서의 평가 상태를 요약하며, 관련 제어와 매핑됩니다.
+
+
+<br><br>
+---
+<br><br>
 
 ### 연습 4: 나만의 벤치마크 만들기!
 간단하게 설명하기 위해, 직접 "벤치마크"를 만들 수도 있지만, 이 연습에서는 "표준"이라는 용어를 사용합니다. 표준은 하나 이상의 권장 사항으로 구성될 수 있습니다.
@@ -66,6 +100,9 @@ AWS 또는 GCP에서 표준을 할당하려면 AWS 또는 GCP 연결을 선택�
 10. **보안 정책** 페이지로 리디렉션됩니다. **상태**별로 정렬하여 새로 생성된 표준이 구독에 적용된 것을 확인하세요.
 ![module4_customstandard](https://github.com/Azure/Microsoft-Defender-for-Cloud/assets/45104504/aba2680c-9d1e-4fae-bb98-63ea3627c9a4)
 
+<br><br>
+---
+<br><br>
 
 ### 연습 5 Azure 감사 보고서
 
@@ -78,6 +115,10 @@ AWS 또는 GCP에서 표준을 할당하려면 AWS 또는 GCP 연결을 선택�
 4. 나타나는 개인정보처리방침 팝업에서 다운로드를 클릭합니다.
 이제 감사 보고서가 다운로드되었습니다.
 
+
+<br><br>
+---
+<br><br>
 
 ### 연습 6 연속 내보내기 및 시간 경과에 따른 규정 준수 통합 문서
 
@@ -103,5 +144,8 @@ AWS 또는 GCP에서 표준을 할당하려면 AWS 또는 GCP 연결을 선택�
 >참고 2: 아래 오류가 표시되는 경우, 연속 내보내기를 통해 이 통합 문서에 데이터가 입력될 때까지 일주일 정도 기다려야 합니다.
 ![규제 준수 평가 및 표준](../Images/lab4rc12.gif?raw=true)
 
+<br><br>
+---
+<br><br>
 
 ### 다음 랩을 계속 진행하세요: [모듈 5 - 보안 자세 개선](../Modules/Module-5-Improving-your-Secure-Posture.md)
