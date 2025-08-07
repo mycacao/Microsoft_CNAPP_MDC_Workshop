@@ -19,7 +19,7 @@
 | 4   | CSPM  | [Regulation Compliance 에 대한 설명](https://github.com/mycacao/Microsoft_CNAPP_MDC_Workshop/blob/main/Modules/Module-4-RegulationCompliance%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0.md)  | 🔴 L200      | 완료           | 모듈 4|
 | 5   | CSPM  | [K-ISMS-P 에 대한 설명](https://github.com/mycacao/Microsoft_CNAPP_MDC_Workshop/blob/main/Modules/Module-5-K-ISMS-P%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0.md)   | 🔴 L200      | 준비중           | N/A |
 | 6   | CSPM  | [보안포스쳐 개선 방법 설명](https://github.com/mycacao/Microsoft_CNAPP_MDC_Workshop/blob/main/Modules/Module-6-%EB%B3%B4%EC%95%88%ED%8F%AC%EC%8A%A4%EC%B3%90%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0.md)  | 🔴 L200      | 준비중           | 모듈 5 |
-| 7   | CWP  | [워크로드 보호 방법 설명](https://github.com/mycacao/Microsoft_CNAPP_MDC_Workshop/blob/main/Modules/Module-6-%EB%B3%B4%EC%95%88%ED%8F%AC%EC%8A%A4%EC%B3%90%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0.md)  | 🔴 L100      | 준비중           | 모듈 5 |
+| 7   | CWP  | [워크로드 보호 방법 설명](https://github.com/mycacao/Microsoft_CNAPP_MDC_Workshop/blob/main/Modules/Module-6-%EB%B3%B4%EC%95%88%ED%8F%AC%EC%8A%A4%EC%B3%90%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0.md)  | 🔴 L100      | 준비중           | 모듈 6 |
 | 8   | CSPM  | [인벤토리 및 취약점 확인 및 조치 설명](https://github.com/mycacao/Microsoft_CNAPP_MDC_Workshop/blob/main/Modules/Module-6-%EB%B3%B4%EC%95%88%ED%8F%AC%EC%8A%A4%EC%B3%90%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0.md)  | 🔴 L100      | 준비중           |  |
 
 ---
