@@ -61,7 +61,7 @@ Microsoft Defender for Cloud를 시작하려면 Microsoft Azure 구독이 필요
 1. Azure Portal에서 **정책 블레이드**로 이동합니다. 상단의 검색 상자에서 "정책"을 검색하거나 [정책](https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Overview) 로 이동할 수 있습니다.
 2. 왼쪽 탐색 창의 **작성 또는 제작, Authoring** 섹션에서 **정의**를 클릭하여 기본 제공 정책 정의 및 이니셔티브를 살펴보세요.
 
-✨✨✨ 잠깐, 정책(Policy) 과 이니셔티브(Initiative) 차이점은? ChatGPT 가 잘 알려주네요 </br>
+✨✨✨ 참고, 정책(Policy) 과 이니셔티브(Initiative) 차이점은? AI 가 잘 알려주네요 </br>
 > (MDC)에서 사용하는 Policy와 Initiative는 모두 Azure Policy의 개념에 기반을 두고 있으며, 보안 평가 및 규정 준수 준수를 위한 핵심 구성요소입니다. </br>
 
 | 개념                        | 설명                                                                                                                     |
