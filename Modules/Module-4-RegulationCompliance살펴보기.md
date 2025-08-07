@@ -66,9 +66,8 @@ AWS 또는 GCP에서 표준을 할당하려면 AWS 또는 GCP 연결을 선택�
 
 <p align="left"><img width="1632" height="725" alt="image" src="https://github.com/user-attachments/assets/55973eb2-05fb-4553-b22d-c3b425536456" /></p>
 
-> ❗ 중요: <br>
-> 변경 사항이 적용되기까지 시간이 다소 소요됩니다(2~3시간).
-
+> ⏰ 중요: <br>
+> 변경 사항이 적용되기까지 시간이 다소 소요됩니다(2~3시간)
   
 <br><br>
 ---
@@ -80,10 +79,16 @@ AWS 또는 GCP에서 표준을 할당하려면 AWS 또는 GCP 연결을 선택�
 3. **저장소 계정으로의 보안 전송을 활성화해야 합니다.**를 클릭하여 엽니다.
 4. 새 창에서 asclabXXXXXX라는 비정상 리소스의 확인란을 선택하고 페이지 하단의 **수정**을 선택합니다.
 5. 팝업 탭에서 리소스 1개 수정을 클릭합니다. 이제 저장소 계정의 보안 전송이 활성화되었습니다.
+
+==> 현재 내 테스트 환경에서 미준수로 되어 있는게 1가지 밖에 없어서 이 화면으로 캡쳐합니다.\" SQL 서버의 감사 보존 기간을 90일 이상으로 설정해야 합니다.\"
+<img width="1621" height="857" alt="image" src="https://github.com/user-attachments/assets/ff980a46-e5bf-4992-a632-728014d7f846" />  
+<img width="1323" height="936" alt="image" src="https://github.com/user-attachments/assets/5a6edfc9-3b62-41cb-bb4e-db8c7259242c" />
+
 6. 대시보드로 돌아갑니다. 규정 표준 준수 상태를 PDF 보고서 또는 CSV 파일로 내보낼 수 있습니다. 상단 메뉴 모음에서 **보고서 다운로드**를 선택합니다.
+<img width="1826" height="892" alt="image" src="https://github.com/user-attachments/assets/00700bd7-481e-4943-a726-b640270d1a12" />
+
 7. 보고서 표준 드롭다운 메뉴에서 *CIS Microsoft Azure Foundations Benchmark v2.0.0* 및 **PDF**를 선택합니다. **다운로드**를 클릭하세요.
 8. 로컬 PDF 파일이 컴퓨터에 저장되었습니다. **CIS Microsoft Azure Foundations Benchmark v2.0.0**을 열고 규정 준수 보고서를 살펴보세요. 이 보고서는 사용자 환경에서의 평가 상태를 요약하며, 관련 제어와 매핑됩니다.
-
 
 <br><br>
 ---
