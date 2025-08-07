@@ -13,11 +13,11 @@
 
 | No. | 카테고리         | 시나리오                                                  | 심각도       | 생성 현황     | 참고  - 원본 모듈 번호 |
 |-----|------------------|-----------------------------------------------------------|--------------|----------------|-----------|
-| 1   | 워크샵 환경 구성    | 워크샵 환경 구성                                        |  🟠 L100         | 완료           | 모듈 1 |
-| 2   | MDC 주요 화면       | MDC 주요 화면 설명                               |  🟠 L100           | 완료           |모듈 2 |
+| 1   | 워크샵 환경 구성    | [워크샵 환경 구성](https://github.com/mycacao/Microsoft_CNAPP_MDC_Workshop/blob/main/Modules/Module-1-MDC%ED%99%98%EA%B2%BD%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0.md)                                        |  🟠 L100         | 완료           | 모듈 1 |
+| 2   | MDC 주요 화면       | [MDC 주요 화면 설명](https://github.com/mycacao/Microsoft_CNAPP_MDC_Workshop/blob/main/Modules/Module-2-MDC%EB%A9%94%EB%89%B4%20%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0.md)                               |  🟠 L100           | 완료           |모듈 2 |
 | 3   | CSPM  | [Security Policy 에 대한 이해 와 설명](https://github.com/mycacao/Microsoft_CNAPP_MDC_Workshop/blob/main/Modules/Module-3-SecurityPolicy%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0.md)                                 | 🔴 L200      | 완료           |모듈 3 |
-| 4   | CSPM  | Regulation Compliance 에 대한 설명                                     | 🔴 L200      | 완료           | 모듈 4|
-| 4   | CSPM  | K-ISMS-P 에 대한 설명                                     | 🔴 L200      | 완료           | N/A |
+| 4   | CSPM  | [Regulation Compliance 에 대한 설명](https://github.com/mycacao/Microsoft_CNAPP_MDC_Workshop/blob/main/Modules/Module-4-RegulationCompliance%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0.md)                                     | 🔴 L200      | 완료           | 모듈 4|
+| 4   | CSPM  | [K-ISMS-P 에 대한 설명](https://github.com/mycacao/Microsoft_CNAPP_MDC_Workshop/blob/main/Modules/Module-5-K-ISMS-P%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0.md)                                     | 🔴 L200      | 완료           | N/A |
 
 
 ---
