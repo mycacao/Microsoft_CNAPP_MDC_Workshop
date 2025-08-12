@@ -1,12 +1,12 @@
 # 탐지 이벤트 처리 프로세스 
-## 1. 탐지 이벤트 확인 방법
-참고 링크 : https://learn.microsoft.com/ko-kr/defender-endpoint/mde-sec-ops-guide
 
-엔드포인트용 Defender에 대한 보안 운영 가이드 - Microsoft Defender for Endpoint | Microsoft Learn
+## 1. 탐지 이벤트 확인 방법
+📌 엔드포인트용 Defender에 대한 보안 운영 가이드 참고 링크 : https://learn.microsoft.com/ko-kr/defender-endpoint/mde-sec-ops-guide
+
 Microsoft Defender for Endpoint(MDE)의 **탐지 이벤트 처리 프로세스**는 위협이 탐지된 후 자동화된 분석, 대응, 수동 검토까지 이어지는 **다단계 보안 운영 흐름**으로 구성된다. 
 <br> 아래는 그 상세한 단계별 설명이며 위 링크를 참고한다.
 
-### Microsoft Defender for Endpoint 탐지 이벤트 처리 프로세스
+### 📚 📑 Microsoft Defender for Endpoint 탐지 이벤트 처리 프로세스
 #### 1.1 데이터 수집 및 센서 감지
 
 각 엔드포인트에 설치된 Defender 센서가 다음과 같은 데이터를 수집
@@ -63,64 +63,100 @@ Defender는 다음과 같은 외부 시스템과 연동됩니다:
 - 사용자 활동 보고서
 이 정보는 향후 탐지 룰 개선 및 정책 수립에 활용됨
 
+<br><br>
+---
+<br><br>
 
-## 2. 주간 활동
+## 📑 2. 주간 활동
 
-메시지 센터 확인
--Microsoft Defender XDR Microsoft 365 메시지 센터를 사용하여 새로운 기능 및 변경된 기능, 계획된 유지 관리 또는 기타 중요한 공지 사항과 같은 향후 변경 사항을 알려줌. 내용을 검토함
--메시지 센터 메시지를 검토하여 환경에 영향을 주는 향후 변경 내용을 이해함
--상태 탭의 Microsoft 365 관리 센터 액세스할 수 있음
+📍 메시지 센터 확인
+* Microsoft Defender XDR Microsoft 365 메시지 센터를 사용하여 새로운 기능 및 변경된 기능, 계획된 유지 관리 또는 기타 중요한 공지 사항과 같은 향후 변경 사항을 알려줌. 내용을 검토함
+* 메시지 센터 메시지를 검토하여 환경에 영향을 주는 향후 변경 내용을 이해함
+* 상태 탭의 Microsoft 365 관리 센터 액세스할 수 있음
+* Microsoft 365 서비스 상태를 검사 방법을 참조
+  + https://learn.microsoft.com/ko-kr/microsoft-365/enterprise/view-service-health?view=o365-worldwide
 
-	Microsoft 365 서비스 상태를 검사 방법을 참조
+📍보안 운영 팀
+ 위협 보고 검토
+  + 상태 보고서를 검토하여 해결해야 하는 디바이스 위협 추세를 식별합니다.
+  + 위협 방지 보고서를 참조
+  + https://learn.microsoft.com/ko-kr/defender-endpoint/threat-protection-reports  
 
-보안 운영 팀
-- 위협 보고 검토
-	상태 보고서를 검토하여 해결해야 하는 디바이스 위협 추세를 식별합니다. 위협 방지 보고서를 참조
-- 위협 분석 검토
-	위협 분석을 검토하여 환경에 영향을 주는 캠페인을 식별합니다. 위협 분석을 통해 새로운 위협 추적 및 대응을 참조하세요
+* 위협 분석 검토
+  + 위협 분석을 검토하여 환경에 영향을 주는 캠페인을 식별합니다.
+  + 위협 분석을 통해 새로운 위협 추적 및 대응을 참조하세요
+  + https://learn.microsoft.com/ko-kr/defender-xdr/threat-analytics  
 
-보안 관리 팀
-- TVM(위협 및 취약성) 상태 검토
-	TVM을 검토하여 조치가 필요한 새로운 취약성 및 권장 사항을 식별합니다. 취약성 관리 dashboard 참조하세요.
-o	공격 표면 감소 보고 검토
-	ASR 보고서를 검토하여 환경에 영향을 주는 파일을 식별합니다. 공격 표면 감소 규칙 보고서를 참조하세요.
-o	웹 보호 이벤트 검토
-	웹 방어 보고서를 검토하여 차단된 IP 주소 또는 URL을 식별합니다. 웹 보호를 참조하세요.
+📍보안 관리 팀
+* TVM(위협 및 취약성) 상태 검토
+  + TVM을 검토하여 조치가 필요한 새로운 취약성 및 권장 사항을 식별합니다.
+  + 취약성 관리 dashboard 참조하세요
+  + https://learn.microsoft.com/ko-kr/defender-vulnerability-management/tvm-dashboard-insights  
+
+* 공격 표면 감소 보고 검토
+  + ASR 보고서를 검토하여 환경에 영향을 주는 파일을 식별합니다.
+  + 공격 표면 감소 규칙 보고서를 참조하세요
+  + https://learn.microsoft.com/ko-kr/defender-endpoint/attack-surface-reduction-rules-report  
+
+* 웹 보호 이벤트 검토
+  + 웹 방어 보고서를 검토하여 차단된 IP 주소 또는 URL을 식별합니다.
+  + 웹 보호를 참조하세요
+  + https://learn.microsoft.com/ko-kr/defender-endpoint/web-protection-overview  
+
+<br><br>
+---
+<br><br>
 
 ## 3. 월별 활동
 
-•	최근 릴리스된 업데이트를 이해하려면 다음 문서를 검토함
-o	엔드포인트용 Microsoft Defender의 새로운 기능
-o	Windows의 엔드포인트용 Microsoft Defender 새로운 기능
-o	Mac의 엔드포인트용 Microsoft Defender 새로운 기능
-o	Linux의 엔드포인트용 Microsoft Defender 새로운 기능
-o	iOS의 엔드포인트용 Microsoft Defender 새로운 기능
-o	Android의 엔드포인트용 Microsoft Defender 새로운 기능
+📍 최근 릴리스된 업데이트를 이해하려면 다음 문서를 검토함
+* 엔드포인트용 Microsoft Defender의 새로운 기능
+  + https://learn.microsoft.com/ko-kr/defender-endpoint/whats-new-in-microsoft-defender-endpoint
+* Windows의 엔드포인트용 Microsoft Defender 새로운 기능
+  + https://learn.microsoft.com/ko-kr/defender-endpoint/windows-whatsnew
+* Mac의 엔드포인트용 Microsoft Defender 새로운 기능
+  + https://learn.microsoft.com/ko-kr/defender-endpoint/mac-whatsnew
+* Linux의 엔드포인트용 Microsoft Defender 새로운 기능
+  + https://learn.microsoft.com/ko-kr/defender-endpoint/linux-whatsnew
+* iOS의 엔드포인트용 Microsoft Defender 새로운 기능
+  + https://learn.microsoft.com/ko-kr/defender-endpoint/ios-whatsnew
+* Android의 엔드포인트용 Microsoft Defender 새로운 기능
+  + https://learn.microsoft.com/ko-kr/defender-endpoint/android-whatsnew
 
-•	보안 관리 팀
-o	정책에서 제외된 디바이스 검토
-o	엔드포인트용 Defender 정책에서 제외된 디바이스가 있는 경우 해당 디바이스를 정책에서 제외해야 하는지 여부를 검토하고 확인함
+📍 보안 관리 팀
+* 정책에서 제외된 디바이스 검토
+* 엔드포인트용 Defender 정책에서 제외된 디바이스가 있는 경우 해당 디바이스를 정책에서 제외해야 하는지 여부를 검토하고 확인함
+
+<br><br>
+---
+<br><br>
 
 ## 4. 정기 활동
 
-이러한 작업은 보안 상태에 대한 유지 관리로 간주되며 지속적인 보호에 중요하다. 그러나 시간과 노력이 필요할 수 있으므로 이러한 작업을 수행하기 위해 유지할 수 있는 표준 일정을 설정하는 것이 좋다.
+이러한 작업은 보안 상태에 대한 유지 관리로 간주되며 지속적인 보호에 중요하다. <br> 그러나 시간과 노력이 필요할 수 있으므로 이러한 작업을 수행하기 위해 유지할 수 있는 표준 일정을 설정하는 것이 좋다.
 
-•	예외 항목 검토
-o	사용자 환경에서 설정된 제외를 검토하여 더 이상 제외할 필요가 없는 항목을 제외하여 보호 격차를 만들지 않았는지 확인
-o	Defender 정책 구성 검토
-	Defender 구성 설정을 주기적으로 검토하여 필요에 따라 설정되었는지 확인
-o	자동화 수준 검토
-	자동화된 조사 및 수정 기능에서 자동화 수준을 검토. 자동화된 조사 및 수정의 자동화 수준을 참조하세요.
-o	사용자 지정 검색 검토
-	생성된 사용자 지정 검색이 여전히 유효하고 효과적인지 주기적으로 검토. 사용자 지정 검색 검토를 참조하세요.
-o	경고 표시 안 함 검토
-o	생성된 경고 제거 규칙을 주기적으로 검토하여 여전히 필요하고 유효한지 디바이스를 정책에서 제외해야 하는지 여부를 검토하고 확인함
+📍예외 항목 검토
+* 사용자 환경에서 설정된 제외를 검토하여 더 이상 제외할 필요가 없는 항목을 제외하여 보호 격차를 만들지 않았는지 확인
+* **Defender 정책 구성 검토**
+  +	Defender 구성 설정을 주기적으로 검토하여 필요에 따라 설정되었는지 확인
+* 자동화 수준 검토
+  + 자동화된 조사 및 수정 기능에서 자동화 수준을 검토. 자동화된 조사 및 수정의 자동화 수준을 참조하세요.
+  + https://learn.microsoft.com/ko-kr/defender-endpoint/automation-levels
+* 사용자 지정 검색 검토
+  + 생성된 사용자 지정 검색이 여전히 유효하고 효과적인지 주기적으로 검토. 사용자 지정 검색 검토를 참조하세요.
+  + https://learn.microsoft.com/ko-kr/defender-xdr/custom-detection-rules
+* 경고 표시 안 함 검토
+  + 생성된 경고 제거 규칙을 주기적으로 검토하여 여전히 필요하고 유효한지 디바이스를 정책에서 제외해야 하는지 여부를 검토하고 확인함
+
+<br><br>
+---
+<br><br>
 
 ## 5. 에이전트 설치율/ 최신 업데이트 적용률 / 이벤트 탐지율 모니터링
 Microsoft Defender 포털(https://security.microsoft.com) 의 Report > Device Health > Microsoft Defender Antivirus Health 메뉴를 통해 현황을 파악할 수 있다. 
 
-
 에이전트 유형(윈도우, 리눅스, 맥) 의 설치 버전별 통계를 볼수 있다. 
+<img width="900" height="618" alt="image" src="https://github.com/user-attachments/assets/7a2456ab-3d61-49d0-a12b-fc0187a24a2e" />
 
 
  
@@ -128,13 +164,15 @@ Microsoft Defender 포털(https://security.microsoft.com) 의 Report > Device He
 
 해당 항목을 클릭하면, 세부 목록을 볼수 있다. 리눅스 특정 버전을 클릭하면 다음과 같은 화면이 보인다.
  
+<img width="900" height="605" alt="image" src="https://github.com/user-attachments/assets/a09f9116-5af3-4d20-abfe-286007c1e881" />
 
 
 
 
 이외에도 검색명령어를 활용하여 각종 통계정보를 확인할 수 있다.
 
- 
+ <img width="900" height="427" alt="image" src="https://github.com/user-attachments/assets/26db18ab-0374-4f8a-b6af-4c3ae9ee80cf" />
+
 
 
 ```
@@ -145,7 +183,7 @@ DeviceTvmSecureConfigurationAssessment
     ConfigurationId == 'scid-2003' and OSPlatform startswith 'Windows', 'TamperProtection',
     ConfigurationId == 'scid-2010' and OSPlatform startswith 'Windows', 'AntivirusEnabled',
     ConfigurationId == 'scid-90'   and OSPlatform startswith 'Windows', 'EmailScanning', 
-    ConfigurationId == 'scid-2011' and OSPlatform startswith 'Windows', 'AntivirusSignatureVersion',
+   ConfigurationId == 'scid-2011' and OSPlatform startswith 'Windows', 'AntivirusSignatureVersion',
     ConfigurationId == 'scid-5095' and OSPlatform == 'macOS', 'AntivirusSignatureVersion',
     ConfigurationId == 'scid-6095' and OSPlatform == 'Linux', 'AntivirusSignatureVersion',
     ConfigurationId == 'scid-2012' and OSPlatform startswith 'Windows','RealtimeProtection',
@@ -167,31 +205,31 @@ DeviceTvmSecureConfigurationAssessment
 | where OnboardingStatus == "Onboarded"
 | project-away SignatureData, NA, DeviceId1, EmailScanning, TamperProtection
 ```
+
 참고 : https://jeffreyappel.nl/how-to-check-for-a-healthy-defender-for-endpoint-environment/
 
- 
-	추가적으로 다음 화면에서도 만들어져 있는 대시보드들을 활용할 수 있다.
-	Microsoft Defender 보안 포털(Defender XDR) 활용
-o	Defender 보안 포털(https://security.microsoft.com)에서
-디바이스 인벤토리 또는 보고서 메뉴를 통해조직 내 온보딩된 디바이스 현황과 에이전트 설치/미설치 상태를 확인할 수 있음
-o	설치율은 전체 디바이스 대비 온보딩(에이전트 설치 및 연결)된 디바이스의 비율로 확인 가능
-	Intune 관리 콘솔 디바이스 > 모니터링 > 엔드포인트 보안 메뉴에서
-Defender 에이전트가 설치된 디바이스와 그렇지 않은 디바이스를 한눈에 파악할 수 있다. 
+ <img width="900" height="632" alt="image" src="https://github.com/user-attachments/assets/2aee2c61-9de9-41f0-b48a-2e0ed078a52f" />
 
+추가적으로 다음 화면에서도 만들어져 있는 대시보드들을 활용할 수 있다.
+Microsoft Defender 보안 포털(Defender XDR) 활용
+- Defender 보안 포털(https://security.microsoft.com)에서 디바이스 인벤토리 또는 보고서 메뉴를 통해조직 내 온보딩된 디바이스 현황과 에이전트 설치/미설치 상태를 확인할 수 있음
+- 설치율은 전체 디바이스 대비 온보딩(에이전트 설치 및 연결)된 디바이스의 비율로 확인 가능
+Intune 관리 콘솔 디바이스 > 모니터링 > 엔드포인트 보안 메뉴에서 Defender 에이전트가 설치된 디바이스와 그렇지 않은 디바이스를 한눈에 파악할 수 있다. 
 
-
- 
+<img width="778" height="554" alt="image" src="https://github.com/user-attachments/assets/ea03085e-b994-4fba-830d-5ed3c24b785e" />
 
 
 이외 최신 업데이트 적용률, 이벤트 탐지율도 검색하여 확인할수 있다.
 
-o	Microsoft Defender for Endpoint 환경에서 에이전트가 최신 버전으로 업데이트된 디바이스의 비율을 확인하려면, Microsoft Defender XDR 포털의 고급 헌팅(Advanced Hunting) 기능에서 KQL 쿼리를 사용할 수 있음
-o	최신 에이전트 버전 기준 확인
-o	조직에서 "최신"으로 간주하는 에이전트 버전(예: MsSense.exe의 ProductVersion)을 먼저 확인
-o	최신 버전 기준은 Microsoft 공식 릴리스 정보 또는 조직의 보안 정책에 따라 다를 수 있음
-o	고급 헌팅 쿼리 예시
-o	아래는 DeviceTvmSecureConfigurationAssessment 또는 DeviceInfo 테이블을 활용해 각 디바이스의 에이전트 버전을 집계하고, 최신 버전 적용 비율을 산출하는 KQL 쿼리 예시입니다.
-o	
+-	Microsoft Defender for Endpoint 환경에서 에이전트가 최신 버전으로 업데이트된 디바이스의 비율을 확인하려면, Microsoft Defender XDR 포털의 고급 헌팅(Advanced Hunting) 기능에서 KQL 쿼리를 사용할 수 있음
+-	최신 에이전트 버전 기준 확인
+- 조직에서 "최신"으로 간주하는 에이전트 버전(예: MsSense.exe의 ProductVersion)을 먼저 확인
+- 최신 버전 기준은 Microsoft 공식 릴리스 정보 또는 조직의 보안 정책에 따라 다를 수 있음
+
+고급 헌팅 쿼리 예시
+- 아래는 DeviceTvmSecureConfigurationAssessment 또는 DeviceInfo 테이블을 활용해 각 디바이스의 에이전트 버전을 집계하고, 최신 버전 적용 비율을 산출하는 KQL 쿼리 예시입니다.
+
+```
 let LatestVersion = "10.8760.12345.0"; // 조직에서 최신으로 인정하는 버전 입력
 DeviceInfo
 | summarize
@@ -199,48 +237,52 @@ DeviceInfo
     전체_디바이스 = count()
 | extend
     최신_업데이트_적용_비율 = todouble(최신_버전_디바이스) / todouble(전체_디바이스) * 100
+```
 
-Version 필드는 MsSense.exe 또는 Defender Agent의 버전 정보이며
-LatestVersion에 최신 버전 번호로 확인하다. 
+**Version** 필드는 MsSense.exe 또는 Defender Agent의 버전 정보이며 **LatestVersion**에 최신 버전 번호로 확인하다. 
 
 이부분에 대해서는 추가로 업데이트 예정이다.
- 
+
+<br><br>
+--
+<br><br>
+ 
 ## 6 오탐 차단시, 프로세스 차단 긴급 조치 방법 
-### 1.5.1 프로세스 차단 긴급 조치 방법
-o	차단 해제 및 예외 처리
-o	Microsoft Defender XDR 포털 접속: https://security.microsoft.com
-o	"조치된 항목(Action Center)" 또는 "인시던트" 메뉴 이동
-o	차단된 항목 선택 → "허용(Allow)" 클릭
-o	허용 범위 선택:
-	파일 해시 기반
-	경로 기반
-	서명 기반 (신뢰할 수 있는 게시자)
-o	허용 처리는 모든 디바이스에 적용되므로 신중하게 판단 필요
+### 6.1 프로세스 차단 긴급 조치 방법
+차단 해제 및 예외 처리
+- Microsoft Defender XDR 포털 접속: https://security.microsoft.com
+- "조치된 항목(Action Center)" 또는 "인시던트" 메뉴 이동
+- 차단된 항목 선택 → "허용(Allow)" 클릭
+- 허용 범위 선택
+  + 파일 해시 기반
+  + 경로 기반
+  + 서명 기반 (신뢰할 수 있는 게시자)
+허용 처리는 모든 디바이스에 적용되므로 신중하게 판단 필요
 
-o	또는 다음 파워쉘 스크립트로 허용 처리
-o	(예시) Add-MpPreference -ExclusionPath "C:\Program Files\MyApp"
+또는 다음 파워쉘 스크립트로 허용 처리
+- (예시) Add-MpPreference -ExclusionPath "C:\Program Files\MyApp"
 
-#### 1.6.2 탐지 이벤트 예외 처리 방법 
-o	Microsoft Defender for Endpoint(MDE)에서 탐지 이벤트에 대한 예외 처리는 특정 파일, 프로세스, 경로, 해시 등에 대해 탐지 또는 차단을 하지 않도록 설정한다.
-o	이 작업은 오탐지 대응, 내부 도구 허용, 테스트 환경 구성 등에 사용
-o	Defender 포털에서 직접 허용 처리 (Allow List 등록)
-o	Microsoft Defender XDR 포털 접속
-o	"인시던트" 또는 "조치된 항목(Action Center)" 메뉴 이동
-o	차단된 항목 선택 → "허용(Allow)" 클릭
-o	허용 기준 선택:
-	파일 해시 기반
-	경로 기반
-	서명 기반 (신뢰할 수 있는 게시자)
+### 6.2 탐지 이벤트 예외 처리 방법 
+Microsoft Defender for Endpoint(MDE)에서 탐지 이벤트에 대한 예외 처리는 특정 파일, 프로세스, 경로, 해시 등에 대해 탐지 또는 차단을 하지 않도록 설정한다.
+- 이 작업은 오탐지 대응, 내부 도구 허용, 테스트 환경 구성 등에 사용
+Defender 포털에서 직접 허용 처리 (Allow List 등록)
+- Microsoft Defender XDR 포털 접속
+- **인시던트** 또는 **조치된 항목(Action Center)** 메뉴 이동
+-	차단된 항목 선택 → **허용(Allow)** 클릭
+-	허용 기준 선택
+  +	파일 해시 기반
+  +	경로 기반
+  +	서명 기반 (신뢰할 수 있는 게시자)
 
 추가로 Intune 에서 예외처리를 정책 템플릿으로 추가할 수 있다.
-o	경로: Endpoint security > Antivirus > Microsoft Defender Antivirus
-o	정책 템플릿에서 예외 항목 추가
-	Microsoft Defender for Endpoint 설정에서 제외 정책 구성
-o	Defender 설정에서 다음 항목을 예외로 지정 가능:
-	파일 및 폴더
-	프로세스
-	파일 확장자
-	네트워크 위치
+- 경로: Endpoint security > Antivirus > Microsoft Defender Antivirus
+  + 정책 템플릿에서 예외 항목 추가
+    + Microsoft Defender for Endpoint 설정에서 제외 정책 구성
+- Defender 설정에서 다음 항목을 예외로 지정 가능:
+  + 파일 및 폴더
+  + 프로세스
+  + 파일 확장자
+  + 네트워크 위치
  
 ## 1.7. 탐지 이벤트 로그 분석 상세 방법
 #### 1.7.1 탐지 이벤트 상세 분석 방법
