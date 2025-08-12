@@ -239,4 +239,181 @@ Microsoft 업데이트 카탈로그에서 수동 설치
 
 <img width="900" height="398" alt="image" src="https://github.com/user-attachments/assets/32e527d1-7d3f-4c9f-b44b-9540c7fd4b42" />
 
+<br><br>
+---
+<br><br>
 
+
+## 4 탐지 룰 업데이트 방안 (주기적, 비주기적, 수동)
+
+### 4.1 리눅스 용 탐지룰 업데이트 설정 방법 
+
+#### 리눅스 탐지룰 자동 업데이트
+
+기본으로 리눅스용 탐지룰은 자동 업데이트 되도록 설정되어 있다. 
+자동 업데이트 되도록 설정하기 위해서는 엔드포인트 보안 정책을 설정한다.
+
+<img width="900" height="384" alt="image" src="https://github.com/user-attachments/assets/c995274f-5d1e-4da8-99f4-73357493f9af" />
+
+기본값으로 Automatic Security Intelligence Updates 가 활성화되어 있다. 
+
+<img width="824" height="527" alt="image" src="https://github.com/user-attachments/assets/d9ba7795-379c-4194-9042-327265e47c7a" />
+
+이렇게 지정한 설정을 대상 디바이스에 지정하면 된다. 
+기본값이 활성화(enabled) 이기 때문에 새롭게 추가할 필요는 없다. 
+
+<img width="900" height="479" alt="image" src="https://github.com/user-attachments/assets/5b9b4109-58d5-485b-a0b0-c2953ad9085c" />
+
+Command Line 으로 다음 명령어로 각 서버에서 활성화 시킬수 있다. 
+
+<img width="768" height="135" alt="image" src="https://github.com/user-attachments/assets/06cc22ab-80b7-44de-a47a-f9729b3dded5" />
+
+아래와 같은 명령어로 리눅스 탐지 룰 자동업데이트가 활성화 되어있는지도 확인할 수있다.
+
+<img width="831" height="446" alt="image" src="https://github.com/user-attachments/assets/14e1738c-6a97-482a-9d2a-90ad656bb675" />
+
+
+#### 리눅스 탐지룰 수동 업데이트
+수동으로 탐지룰 수동 업데이트는 다음 명령어로 수행할 수있다.
+
+\# mdatp definitions update
+
+<img width="900" height="259" alt="image" src="https://github.com/user-attachments/assets/79141ac1-4539-498d-86fb-73b2f7b3672f" />
+
+다음 2가지 명령어중 한가지로 현재 탐지룰 버전을 확인할 수 있다.
+<img width="900" height="398" alt="image" src="https://github.com/user-attachments/assets/6270a332-6122-415e-a781-8fb225ccc0ce" />
+
+<img width="900" height="229" alt="image" src="https://github.com/user-attachments/assets/0933acb9-57a2-4582-aa71-41495cccfd07" />
+
+### 4.2 윈도우 용 탐지룰 업데이트 설정 방법 
+
+#### 윈도우 탐지룰 자동 업데이트
+
+#### Microsoft Defender for Endpoint와 Intune 활용 방법
+Microsoft Defender 관리 센터 접속한다.
+-	→ 설정 > 엔드포인트 > 구성 관리 → **MDE를 사용하여 Intune의 보안 구성 설정 적용** 옵션을 활성화하여 Intune 에서 업데이트 정책을 구성할 수 있도록 한다.
+
+<img width="893" height="460" alt="image" src="https://github.com/user-attachments/assets/f2d47979-01e2-4286-9775-35d66f2b2e5b" />
+
+-	적용 범위 선택
+>>	모든 장치에 적용하거나 특정 태그(MDE-Management)가 지정된 장치에만 적용 가능하도록 할수 있다.
+>>	장치가 MDE에 등록되면 Intune과 자동 연동된다.
+
+<img width="900" height="447" alt="image" src="https://github.com/user-attachments/assets/09ede580-81b7-49aa-a0ce-076568d889aa" />
+
+#### Windows 용 자동 업데이트 방법 - Defender 포털에서 등록상태 확인 
+
+등록 상태는 Defender 포털(https://security.microsoft.com) 에서 확인 가능하다.
+- 상태가 업데이트 되기 까지 최대 24시간 소요될 수 있다.
+
+<img width="900" height="291" alt="image" src="https://github.com/user-attachments/assets/917d3b34-92ea-410f-aa1b-39349a2b58f2" />
+
+장치(디바이스) 마다 태그를 지정하여 그룹화 관리할 수 있다.
+- 아래에 예시는 MDE-Management 라는 태그를 지정하여 정책 설정시, 적용 범위로 활용할 수 있다.
+
+<img width="900" height="289" alt="image" src="https://github.com/user-attachments/assets/86b22c8e-6369-4455-a7e6-d5d547d3bdcf" />
+
+- 디바이스 에서 수동 태그 편집을 지정한다.
+
+<img width="900" height="331" alt="image" src="https://github.com/user-attachments/assets/83152116-237b-4931-8b91-5375ebc87b26" />
+
+- 목록에 지정한 태그가 설정된 것을 확인 할 수 있다.
+
+<img width="900" height="182" alt="image" src="https://github.com/user-attachments/assets/89dc8a8d-bbdb-4839-b1ca-6966db1e2f68" />
+
+
+####  Windows 용 자동 업데이트 방법 - Intune 관리 포털에서 탐지룰  업데이트(보안프로필)설정
+Intune 의 엔드포인트 보안 관리화면에서 프로필을 설정하면, 장치(디바이스) 마다 태그를 지정하여 그룹화 관리할 수 있다.
+-	아래에 예시는 MDE-Management 라는 태그를 지정하여 정책 설정시, 적용 범위로 활용할 수 있다. 
+
+<img width="900" height="511" alt="image" src="https://github.com/user-attachments/assets/328b650f-6010-4895-81b0-2ee9436e372a" />
+
+등록 상태는 Defender 포털에서 확인할수 있다.
+-	Microsoft Intune (https://intune.microsoft.com) > 엔드포인트 보안 > 모든 디바이스 
+
+이후 주기적인 탐지룰 업데이트에 대해서는 앞 2.2 항목에서 설명한 가이드와 동일하다.
+다음 화면은 그룹을 동적으로 관리할 때 추가적인 기능을 활용하여 Advanced 한 기능을 활용할수 있어서 추가로 설명한다. 
+
+<img width="900" height="419" alt="image" src="https://github.com/user-attachments/assets/85877447-2382-4616-baff-b42596b29322" />
+
+등록 상태는 Defender 포털에서 확인할 수 있다.
+- Microsoft Intune (https://intune.microsoft.com) > 엔드포인트 보안 > 모든 디바이스 
+-	각 디바이스에 대한 상세 설명을 확인할수 있고,  MDE(Microsoft Defender for Endpoint) 가 설정된 내용을 확인할수 있다.
+
+<img width="900" height="263" alt="image" src="https://github.com/user-attachments/assets/bd1a24f3-cff6-41e9-92b8-dd33e31f4d67" />
+
+#### 참고로, Entra 에서 동적 구성원 규칙을 설정하여, 향후 프로파일(정책)이 적용되는 대상을 유연하게 설정하여 지정할수 있도록 하는 방법이다 .
+-	Entra 화면 (https://entra.microsoft.com) 에서 그룹 > 모든 그룹 > 동적 구성원 규칙
+
+<img width="900" height="432" alt="image" src="https://github.com/user-attachments/assets/a44a2db9-02ca-4dd2-a57e-05149d2df1f6" />
+
+#### Windows 용 자동 업데이트 방법 -  Intune/Defender 포털에서 탐지룰 업데이트(보안프로필)설정
+
+다음은 탐지룰 업데이트를 위해 보안프로필(정책)을 정의하는 부분이며,탐지룰 업데이트에 대해서는 앞 항목에서 설명한 가이드와 동일하다.
+
+<img width="900" height="413" alt="image" src="https://github.com/user-attachments/assets/972b31a7-5b8f-48a5-9374-f9de1fff6830" />
+
+Defender 포털에서도 생성할 수 있다.
+
+<img width="900" height="332" alt="image" src="https://github.com/user-attachments/assets/b04ac73c-2c4e-4f22-9b79-10c0cda8ef1a" />
+
+#### 윈도우 수동 업데이트 방법
+
+1. Windows 보안 설정에서 수동 업데이트
+-가장 간단한 방법은 Windows 보안 앱을 통해 직접 업데이트를 확인하는 것이다.
+-시작 메뉴 > 설정 > 업데이트 및 보안 > Windows 보안
+-Windows 보안 열기 > 바이러스 및 위협 방지 클릭
+-아래로 스크롤하여 "보호 업데이트" > 업데이트 확인 클릭
+- → 최신 보안 인텔리전스가 수동으로 다운로드 및 설치된다.
+- 이항목도 앞 절의항목과 동일하다.
+________________________________________
+2. Microsoft 업데이트 카탈로그에서 수동 다운로드
+보안 인텔리전스 또는 플랫폼 업데이트를 직접 다운로드하여 설치할 수 있다.
+-	Microsoft 업데이트 카탈로그 접속
+-다음 키워드로 검색:
+-보안 인텔리전스: KB2267602
+-플랫폼 업데이트: KB4052623
+-운영체제에 맞는 버전 선택 후 .exe 또는 .cab 파일 다운로드
+-	다운로드한 파일을 실행하여 수동 설치
+________________________________________
+3. PowerShell 명령어로 수동 업데이트
+고급 사용자는 PowerShell을 통해 Defender 업데이트를 수동으로 실행할 수 있다.
+-	이 명령은 최신 보안 인텔리전스를 다운로드하고 적용합니다.
+-	관리자 권한 PowerShell에서 실행해야 합니다.
+
+## 5 수동 탐지룰 생성 방법 
+
+### 5.1 수동 탐지룰 확인 방법 
+Microsoft Defender for Endpoint(MDE)에서 **수동 탐지 룰(탐지 규칙)**을 생성하려면, 일반적으로 고급 헌팅(Advanced Hunting) 또는 사용자 지정 감지(Custom Detection Rules) 기능을 사용합니다. <br> 이 기능은 Microsoft Defender XDR 포털에서 제공되며, 다음과 같은 절차로 수동 탐지 룰을 만들 수 있다.
+
+Microsoft Defender XDR 포털 접속
+-	URL: https://security.microsoft.com
+-	관리자 권한 필요
+
+<img width="900" height="641" alt="image" src="https://github.com/user-attachments/assets/55f9b1a7-f3f3-4702-b2ad-8d6e3f4b2f51" />
+
+고급 헌팅 쿼리 작성
+-	메뉴: "헌팅 > 고급 헌팅"
+-	Kusto Query Language (KQL)를 사용하여 탐지 쿼리를 작성함
+-	예시: 특정 프로세스 실행 탐지
+
+<img width="900" height="721" alt="image" src="https://github.com/user-attachments/assets/84df1f49-b520-405d-9727-676c11f370e5" />
+
+사용자 지정 탐지 규칙 생성
+-	메뉴: "헌팅 > 사용자 지정 감지(Custom detection rules)"
+-	**규칙 만들기(Create rule)** 클릭
+-	앞서 작성한 고급 헌팅 쿼리를 기반으로 규칙 생성
+
+<img width="900" height="319" alt="image" src="https://github.com/user-attachments/assets/f93bb55c-0ef6-4659-8b22-b3877d158c01" />
+
+-	쿼리 실행 주기: 5분, 10분, 1시간 등
+-	경고 심각도: 낮음, 보통, 높음
+-	경고 제목 및 설명
+- 조치: 이메일 알림, 티켓 생성, 자동 응답 등
+
+<img width="900" height="749" alt="image" src="https://github.com/user-attachments/assets/2b9aac20-1e98-43c9-8878-5feeaf1f5a01" />
+
+규칙 저장 및 활성화
+- 규칙을 저장하고 활성화하면, 지정된 주기마다 쿼리가 실행되어 조건에 맞는 이벤트가 탐지된다.
+
+<img width="900" height="406" alt="image" src="https://github.com/user-attachments/assets/cc67eb38-5f85-4223-970e-b84675c79010" />
