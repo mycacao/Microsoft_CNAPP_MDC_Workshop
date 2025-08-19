@@ -55,6 +55,24 @@ Microsoft Defender for Cloud - Server
 ---
 <br><br>
 
+## [참고] 내용 추가하기
+기본으로 구독단위로 모두다 VM 이 적용되어 과금이 됨.
+그렇다면, 특정 리소스, VM 을 제외할수 있는가? 가능하다.
+
+리소스 단위로 Disable 시킬수 있다.
+(1) 다음 azure policy 를 이용해서 제외시킬수 있음
+(Configure Azure Defender for Servers to be disabled for all resource(resourcelevel) ---> 리소스 단위로 비활성화 시킬수 있음
+즉 특정 VM 제외시킬수 있음
+
+(2) 또는 MDC API 로도 특정 리소스나 그룹에 제외시킬수 있다.
+과금이 이루어지고있는지 등도 조회해볼수 있다.
+pricings - Get - REST API 
+
+
+<br><br>
+---
+<br><br>
+
 
 ## 2 설치 에이전트 버전 확인
 
