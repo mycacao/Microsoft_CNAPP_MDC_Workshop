@@ -6,12 +6,14 @@
 #### ⌛ 이 랩의 예상 완료 시간: 60분
 
 ## 목표
-- 이번 랩은 MDC 에서 Server (예, Azure VM) 구성 및 테스트를 목표로 한다.
-- Azure VM 즉, 서버 워크로드에 대한 보호를 위한 구성, 정책 설정, 업데이트 설정 하는 방법을 이해할수 있다.
+- 이번 랩은 MDC 에서 Server(예, Azure VM) 구성(에이전트 구성, 정책 설정) 및 동작 테스트를 목표로 한다.
+- Azure VM 즉, 서버 워크로드에 대한 보호를 위한 구성, 정책 설정, 업데이트 설정 하는 방법을 이해한다.
 - 보안 분석 방법도 익힐수 있다.
+- ※ 단, Azure VM 이외, 즉 On-Prem Server 나 AWS, GCP 등의 VM 설치는 내용에 포함하지 않았다. 
+  이 경우는 Azure Arc agent 를 설치하고 구성하면 되는데 포함하지는 않았다. 그외 사용방법은 동일하다. 
 
 #### 가이드 링크
-Microsoft Defender for Cloud - Server
+Microsoft Defender for Cloud - Server 설명 참고
 
 - 국문 https://learn.microsoft.com/ko-kr/azure/defender-for-cloud/defender-for-servers-overview
 - 영문 https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-servers-overview
@@ -21,11 +23,10 @@ Microsoft Defender for Cloud - Server
 <br><br>
 
 #### Server 용 MDC 의 2가지 Plan
-- 서버용 Defender 플랜 1(P1) 은 초급 수준이며 엔드포인트용 Defender 통합에서 제공하는 EDR 기능에 중점을 둡니다.
-- 서버용 Defender 플랜 2(P2) 는 계획 1 및 기타 기능과 동일한 기능을 제공합니다.
+- 서버용 Defender 플랜 1(P1) 은 기본 수준, 엔드포인트용 Defender에서 제공하는 EDR 기능에 중점을 두고 제공한다.
+- 서버용 Defender 플랜 2(P2) 는 플랜 1 + 기타 기능(아래 표 참고) 하여 많은 기능을 제공한다.
 
-
-| 특징                                                 | 계획 1(P1) | 플랜 2(P2) | 클라우드 가용성                                                                                                        |
+| 특징                                                 | 플랜 1(P1) | 플랜 2(P2) | 클라우드 가용성                                                                                                        |
 | ---------------------------------------------------- | ---------- | ---------- | ---------------------------------------------------------------------------------------------------------------------- |
 | 다중 클라우드 및 하이브리드 지원                     | ✅     | ✅     | Azure, AWS 및 GCP VM 및 클라우드용 Microsoft Defender에 연결된 온-프레미스 머신에서 VM(Virtual Machines)을 보호합니다.<br>서버용 Defender 지원 및 요구 사항을 검토합니다.  |                                                                                                                   |
 | 엔드포인트용 Defender 자동 온보딩                    | ✅     | ✅     |                                                                                                                        |
@@ -33,22 +34,24 @@ Microsoft Defender for Cloud - Server
 | 통합 경고 및 인시던트                                | ✅     | ✅     | Azure, AWS 및 GCP                                                                                                      |
 | 소프트웨어 인벤토리 검색1                            | ✅     | ✅     | Azure, AWS 및 GCP                                                                                                      |
 | 규정 준수 평가                                       | ✅     | ✅     | 다양한 환경에서 다양한 표준을 사용할 수 있습니다. 규정 준수 클라우드 가용성에 대해 자세히 알아봅니다.                  |
-| 취약성 검사(에이전트 기반)                           | ✅     | ✅     | Azure, AWS 및 GCP                                                                                                      |
-| 취약성 검사(에이전트 없는)                           | -          | ✅     | Azure, AWS 및 GCP                                                                                                      |
+| 취약성 검사(에이전트)                           | ✅     | ✅     | Azure, AWS 및 GCP                                                                                                      |
+| 취약성 검사(에이전트리스)                           | -          | ✅     | Azure, AWS 및 GCP                                                                                                      |
 | 위협 감지(Azure 네트워크 계층)                       | -          | ✅     | 애저 (Azure)                                                                                                           |
 | OS 시스템 업데이트                                   | -          | ✅     | Azure, AWS, GCP 및 온-프레미스 <br> Azure ARC를 사용하여 온보딩된 머신에만 적용됩니다. 자세히 알아보기.  |
 | Defender for Vulnerability Management 프리미엄 기능3 | -          | ✅     | Azure, AWS, GCP                                                                                                        |
-| 맬웨어 검사(에이전트 없는)                           | -          | ✅     | Azure, AWS 및 GCP                                                                                                      |
-| 컴퓨터 비밀 검사(에이전트 없는)                      | -          | ✅     | Azure, AWS 및 GCP                                                                                                      |
+| 맬웨어 검사(에이전트리스)                           | -          | ✅     | Azure, AWS 및 GCP                                                                                                      |
+| 컴퓨터 비밀 검사(에이전트리스)                      | -          | ✅     | Azure, AWS 및 GCP                                                                                                      |
 | 파일 무결성 모니터링                                 | -          | ✅     | Azure, AWS 및 GCP <br>  Azure ARC를 사용하여 온보딩된 AWS 및 GCP 머신에만 적용됩니다.      |
 | Just-In-Time 가상 머신 액세스                        | -          | ✅     | Azure 및 AWS                                                                                                           |
 | 네트워크 맵                                          | -          | ✅     | 애저 (Azure)                                                                                                           |
 | 무료 데이터 수집(500MB)                              | -          | ✅     |                                                                                                                        |
 
-## 화면에서 설정 확인 
+## 화면에서 설정 확인
+구독 단위로 활성화 시킬수 있다. 즉 Subscription 을 선택하고 들어간다.
 <img width="1377" height="900" alt="image" src="https://github.com/user-attachments/assets/c82e2050-5266-485a-847a-f77293fed08b" />
 
 #### 화면에서 설정 확인 
+인벤토리 메뉴에 들어가서 가상머신으로 필터링하여 확인해보면 현재 활성화되어 있는 가상머신을 조회해 볼 수 있다. 
 <img width="1539" height="744" alt="image" src="https://github.com/user-attachments/assets/06a61ec3-9737-47cd-a5be-37ac78de8140" />
 
 <br><br>
