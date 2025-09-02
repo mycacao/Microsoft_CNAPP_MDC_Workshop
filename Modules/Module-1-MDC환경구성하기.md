@@ -62,4 +62,64 @@ asclab-splan | App Service plan | Demonstrating related security recommendations
 asclab-vnet | Virtual network | Default virtual network for both Azure VM and for network related recommendations
 asclabcr[uniqestring] | Container registry | Demonstrating related security recommendations
 asclabsa[uniqestring] | Storage account | Demonstrating related security recommendations
-SecurityCenterFree | Solution | Default workspace solution used for Microsoft Defender for Cloud free tie기](../Modules/Module-2-MDC메뉴 살펴보기.md)
+SecurityCenterFree | Solution | Default workspace solution used for Microsoft Defender for Cloud free tier
+
+템플릿 배포 후, 생성된 리소스 그룹 세부 정보를 클릭한 다음 배포(1개 배포)를 클릭하면 배포 진행 상황을 확인할 수 있습니다.
+배포가 완료될 때까지 아래 Exercise를 계속하세요.
+<br><br>
+
+<img width="1292" height="715" alt="image" src="https://github.com/user-attachments/assets/527128a1-8750-440d-ad2b-72f8ce2c06bb" />
+<br>
+
+1. 아래의 파란색 **Deploy to Azure** 버튼을 클릭하여 랩 환경을 준비하세요.:
+
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Security-Center%2Fmaster%2FLabs%2FFiles%2Flabdeploy.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a>
+
+2.	배포를 위한 필수 필드를 지정해야 하는 Azure Portal > 사용자 지정 배포 페이지로 리디렉션됩니다.
+3.	구독 필드에서 **Azure Subscription 1**을 선택하세요..
+4.	소스 그룹 필드에서 **새로 만들기**를 클릭하고 이름을 **asclab**으로 지정합니다(원하는 이름을 선택하거나 기본값을 유지할 수 있음).
+5.	매개변수 섹션에서 현재 위치에 가장 가까운 데이터 센터 **region**을 선택합니다(모든 다운스트림 리소스는 리소스 그룹과 동일한 지역에 생성됩니다).
+6. 서비스 전반에서 사용될 암호(예: 가상 머신 및 SQL 데이터베이스의 자격 증명)를 선택하세요.
+> ❗ 중요: <br>
+> 비밀번호는 12자에서 72자 사이여야 하며, 소문자 1개, 대문자 1개, 숫자 1개, 특수문자 1개 중 3가지를 포함해야 합니다. 이를 준수하지 않으면 배포가 실패합니다.  
+7.	**Review + create**을 클릭하여 유효성 검사 프로세스를 시작합니다. 유효성 검사가 통과되면 **Create** 을 클릭하여 구독에서 ARM 배포를 시작합니다.
+8.	배포가 완료되는 데는 약 **10분**이 걸립니다.<br>
+
+> *배포 진행 중* 페이지는 계속 업데이트되며 배포가 성공적이라고 가정하고 리소스가 환경에 업로드되는 모습을 보여줍니다.  
+> 배포 중에 Kubernetes 리소스에 대해 "asclab-aks"라는 이름의 추가 리소스 그룹이 자동으로 생성됩니다.<br>
+
+<img width="600" height="600" alt="image" src="https://github.com/Azure/Microsoft-Defender-for-Cloud/blob/main/Labs/Images/deploy-to-azure.gif?raw=true"  /> 
+
+생성된 리소스 그룹 세부 정보를 클릭한 다음 **Deployments**를 클릭하면 배포 진행 상황을 확인할 수도 있습니다(*1 배포*). <br>
+
+<img width="600" height="600" alt="image" src="https://github.com/Azure/Microsoft-Defender-for-Cloud/blob/main/Labs/Images/asc-deployment-in-progress.gif?raw=true"  />
+
+배포가 완료되면 다음이 표시됩니다.:
+
+<img width="600" height="600" alt="image" src="https://github.com/Azure/Microsoft-Defender-for-Cloud/blob/main/Labs/Images/asc-deployment-completed.gif?raw=true"  />
+
+### Exercise 3: 클라우드용 Microsoft Defender 활성화
+
+#### 구독 업그레이드 및 에이전트 설치
+1. **Azure Portal**을 열고 **Microsoft Defender for Cloud** 블레이드로 이동합니다.
+2. 왼쪽 창에서 **시작하기** 페이지를 클릭하고, **업그레이드** 탭에서 구독(Azure 구독 1)을 선택하고 **활성화**를 누릅니다.
+   >참고: 업그레이드가 완료될 때까지 몇 분 정도 기다려야 할 수 있습니다.
+3. **Azure 구독 1**과 그 아래의 **workspace name**을 모두 선택하세요. **upgrade**를 클릭하여 업그레이드하세요.
+<img width="600" height="600" alt="image" src="https://github.com/Azure/Microsoft-Defender-for-Cloud/blob/main/Labs/Images/mdfc-gettingstarted.png?raw=true"  />
+
+#### 구독 및 Workspace 에서 Defender 적용 범위 상태를 확인하세요.
+1. Microsoft Defender for Cloud 블레이드로 돌아가서 **환경 설정**을 클릭합니다. **Azure**의 아래쪽 화살표를 클릭하여 구독을 표시한 다음, **Azure 구독 1**의 아래쪽 화살표를 클릭하여 작업 영역을 표시합니다. 해당 구독의 Defender 적용 범위는 12/12 플랜입니다..
+> 이전에는 Defender for Server와 Defender for SQL on Machines의 경우 Log Analytics 작업 영역에서 Defender 플랜을 활성화해야 했습니다. 기본적으로 두 플랜 모두 더 이상 Log Analytics 작업 영역을 사용할 필요가 없습니다. (Defender for SQL on Machines는 DCR 요구 사항으로 인해 작업 영역을 생성합니다.)   
+
+2. **Azure 구독 1**을 클릭하고 모든 Microsoft Defender for Cloud 플랜이 활성화되어 있는지 확인하세요.
+
+> 개별 plan을 활성화해야 하는 경우 먼저 오른쪽에 있는 Microsoft Defender for Cloud plan 파란색 상자가 선택되어 있는지 확인한 다음, 아래에서 특정 Defender plan을 선택할 수 있습니다.
+
+<br>
+
+> 주의해주세요:
+> * 업그레이드 버튼을 클릭하기 전에 Microsoft Defender for Cloud를 활성화할 총 리소스 수를 검토할 수 있습니다.
+> * 이전에 사용하지 않은 경우에만 구독에 대해 30일 동안 Microsoft Defender for Cloud 평가판을 활성화할 수 있습니다.
+> * 구독에서 Microsoft Defender for Cloud를 활성화하려면 구독 소유자, 구독 기여자 또는 보안 관리자 역할이 할당되어야 합니다 (Subscription Owner, Subscription Contributor, or Security Admin).
+
+### 다음 랩을 계속하세요: [Module 2 - Exploring Microsoft Defender for Cloud](../Modules/Module-2-Exploring-Azure-Security-Center.md)
