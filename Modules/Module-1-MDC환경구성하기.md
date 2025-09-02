@@ -122,4 +122,4 @@ SecurityCenterFree | Solution | Default workspace solution used for Microsoft De
 > * 이전에 사용하지 않은 경우에만 구독에 대해 30일 동안 Microsoft Defender for Cloud 평가판을 활성화할 수 있습니다.
 > * 구독에서 Microsoft Defender for Cloud를 활성화하려면 구독 소유자, 구독 기여자 또는 보안 관리자 역할이 할당되어야 합니다 (Subscription Owner, Subscription Contributor, or Security Admin).
 
-### 다음 랩을 계속하세요: [Module 2 - Exploring Microsoft Defender for Cloud](../Modules/Module-2-Exploring-Azure-Security-Center.md)
+### 다음 랩을 계속하세요: [Module 2 - Exploring Microsoft Defender for Cloud](../Modules/Module-2-MDC메뉴%20살펴보기.md)
