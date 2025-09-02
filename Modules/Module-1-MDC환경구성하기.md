@@ -47,8 +47,8 @@ ARM 템플릿은 프로젝트의 인프라와 구성을 정의하는 JSON(JavaSc
 
 이름 | 리소스 유형 | 목적
 -----| ------------- | -------
-asclab-win | Virtual machine | Windows Server
-asclab-linux | Virtual machine | Linux Server
+asclab-win | Virtual machine | Windows 서버
+asclab-linux | Virtual machine | Linux 서버
 asclab-as | Availability set | Availability set for the 2-VMs
 asclab-aks | Kubernetes service | Testing container services capabilities
 asclab-app-[uniqestring] | App Service | App service to be used for web app, function app
@@ -101,25 +101,25 @@ SecurityCenterFree | Solution | Default workspace solution used for Microsoft De
 ### Exercise 3: 클라우드용 Microsoft Defender 활성화
 
 #### 구독 업그레이드 및 에이전트 설치
-1. Open **Azure Portal** and navigate to **Microsoft Defender for Cloud** blade.
-2. Click on **Getting started** page from the left pane, On the **Upgrade** Tab, select subscription (Azure subscription 1) and press **Enable**.
-   >Note: You may need to wait for a few minutes for the upgrade to complete.
-3. Select both **Azure subscription 1**, and also the **workspace name** underneath it. Click on **Upgrade** to upgrade.
-   ![Template deployment completed](../Images/mdfc-gettingstarted.png?raw=true)
+1. **Azure Portal**을 열고 **Microsoft Defender for Cloud** 블레이드로 이동합니다.
+2. 왼쪽 창에서 **시작하기** 페이지를 클릭하고, **업그레이드** 탭에서 구독(Azure 구독 1)을 선택하고 **활성화**를 누릅니다.
+   >참고: 업그레이드가 완료될 때까지 몇 분 정도 기다려야 할 수 있습니다.
+3. **Azure 구독 1**과 그 아래의 **workspace name**을 모두 선택하세요. **upgrade**를 클릭하여 업그레이드하세요.
+<img width="600" height="600" alt="image" src="https://github.com/Azure/Microsoft-Defender-for-Cloud/blob/main/Labs/Images/mdfc-gettingstarted.png?raw=true"  />
 
-#### Get the status of the Defender coverage on the subscription and the workspace
-1. Return to Microsoft Defender for Cloud blade and Click on **Environment settings**. Click the down arrow on **Azure** to show the subscription, and then click the down arrow on **Azure Susbcription 1** to show the workspace. Notice the Defender coverage is 12/12 plans for the subscription.
-> Previously for Defender for Server and Defender for SQL on Machines, it was required to enable the Defender plan on a Log Analytics workspace.  By default, both plans no longer require the use of a Log Analytics workspace (Defender for SQL on Machines will however create one due to DCR requirements).    
+#### 구독 및 Workspace 에서 Defender 적용 범위 상태를 확인하세요.
+1. Microsoft Defender for Cloud 블레이드로 돌아가서 **환경 설정**을 클릭합니다. **Azure**의 아래쪽 화살표를 클릭하여 구독을 표시한 다음, **Azure 구독 1**의 아래쪽 화살표를 클릭하여 작업 영역을 표시합니다. 해당 구독의 Defender 적용 범위는 12/12 플랜입니다..
+> 이전에는 Defender for Server와 Defender for SQL on Machines의 경우 Log Analytics 작업 영역에서 Defender 플랜을 활성화해야 했습니다. 기본적으로 두 플랜 모두 더 이상 Log Analytics 작업 영역을 사용할 필요가 없습니다. (Defender for SQL on Machines는 DCR 요구 사항으로 인해 작업 영역을 생성합니다.)   
 
-2. Click on **Azure subscription 1**, and notice how all Microsoft Defender for Cloud plans are enabled. 
+2. **Azure 구독 1**을 클릭하고 모든 Microsoft Defender for Cloud 플랜이 활성화되어 있는지 확인하세요.
 
-> If you need to enable individual plans, first ensure that the Microsoft Defender for Cloud plans blue box on the right hand side is selected, and then you can select the specific Defender plans underneath.
+> 개별 plan을 활성화해야 하는 경우 먼저 오른쪽에 있는 Microsoft Defender for Cloud plan 파란색 상자가 선택되어 있는지 확인한 다음, 아래에서 특정 Defender plan을 선택할 수 있습니다.
 
 <br>
 
-> Please notice:
-> * Before clicking on the Upgrade button, you can review the total number of resources you are going to enable Microsoft Defender for Cloud on.
-> * You can enable Microsoft Defender for Cloud trial for 30-days on a subscriptions only if not previously used.
-> * To enable Microsoft Defender for Cloud on a subscription, you must be assigned the role of Subscription Owner, Subscription Contributor, or Security Admin.
+> 주의해주세요:
+> * 업그레이드 버튼을 클릭하기 전에 Microsoft Defender for Cloud를 활성화할 총 리소스 수를 검토할 수 있습니다.
+> * 이전에 사용하지 않은 경우에만 구독에 대해 30일 동안 Microsoft Defender for Cloud 평가판을 활성화할 수 있습니다.
+> * 구독에서 Microsoft Defender for Cloud를 활성화하려면 구독 소유자, 구독 기여자 또는 보안 관리자 역할이 할당되어야 합니다 (Subscription Owner, Subscription Contributor, or Security Admin).
 
-### Continue with the next lab: [Module 2 - Exploring Microsoft Defender for Cloud](../Modules/Module-2-Exploring-Azure-Security-Center.md)
+### 다음 랩을 계속하세요: [Module 2 - Exploring Microsoft Defender for Cloud](../Modules/Module-2-Exploring-Azure-Security-Center.md)
