@@ -3,8 +3,8 @@
 
 <img width="121" height="161" alt="image" src="https://github.com/user-attachments/assets/bc755e47-c2ed-467f-bdc1-bafefef05b37" />
 
-####  레벨: 100 (초보자)
-####  이 랩의 예상 완료 시간: 30분
+#### 🎓 레벨: 100 (초보자)
+#### ⌛ 이 랩의 예상 완료 시간: 30분
 
 ## 목표
 Azure 평가판 구독을 통해 새 Microsoft 계정을 만드세요.
