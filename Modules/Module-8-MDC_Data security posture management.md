@@ -167,35 +167,48 @@ Defender for Cloud는 Microsoft Purview에서 제공하는 **기본 민감 정�
 
 Microsoft Purview 규정 준수 포털에서 민감도 레이블 범위가 *항목(Items)*으로 설정되어 있는지 확인합니다.; 그 아래에서 **파일(Files)**과 **이메일(Emails)**에 대한 자동 레이블링(auto labeling)을 구성해야 합니다. 레이블은 적용되기 위해 반드시 레이블 정책과 함께 게시되어야 합니다.
 
+<img width="1845" height="877" alt="image" src="https://github.com/user-attachments/assets/d5990e88-0808-461e-8a89-3ec3cb207568" />
+
+
 
 > [!NOTE]
 > 기존 민감도 레이블(sensitivity labels)이 없다면, 레이블을 만드는 방법에 대한 안내는 [링크](https://learn.microsoft.com/en-us/purview/how-to-automatically-label-your-content)를 따라가세요.
 
  이전에 만든 사용자 지정 SIT를 자동 레이블링 조건으로 사용할 수 있습니다. 이후 해당 키워드가 포함된 문서를 생성하면 문서가 자동으로 레이블링됩니다. 또는 Office 애플리케이션에서 문서를 수동으로 레이블링할 수도 있습니다.
 
- ![Auto-labeling](../Images/autolabeling.png?raw=true)
+<img width="1833" height="1002" alt="image" src="https://github.com/user-attachments/assets/4d10e750-bd86-41c2-9071-3b560c18fc17" />
 
-To have your labeled data visible in Defender for Cloud, follow these steps to check that your labels are included in the sensitive data discovery:
+<img width="1840" height="1040" alt="image" src="https://github.com/user-attachments/assets/341c267a-5d36-47cf-98d1-ea79ab29b5f9" />
 
-1. Navigate to **Microsoft Defender for Cloud > Environment settings > Data sensitivity** as described in **Exercise 3**.
 
-2. Select **Change** to see the list of sensitivity labels and select the sensitivity label that will serve as your threshold. If you select the **(Lowest sensitivity)** label, all discovered labeled resources will be shown in Defender for Cloud.
+Defender for Cloud에서 레이블이 지정된 데이터가 표시되도록 하려면, 민감한 데이터 검색에 레이블이 포함되어 있는지 확인하기 위해 다음 단계를 따르세요 : 
 
-<img width="1837" height="1030" alt="image" src="https://github.com/user-attachments/assets/5c4fb7b8-cae7-4e99-b230-5bb505d2d2bd" />
+1. 앞 연습3 에서 설명한  **Microsoft Defender for Cloud > Environment settings > Data sensitivity** 메뉴로 이동합니다.
 
-3. Select **Apply** and **Save**.  
+2. **Change** 를 선택하면, 민감도 레이블(sensitivity labels)을 볼수 있고, 임계값으로 사용할 민감도 레이블을 선택하세요. **(Lowest sensitivity)** 레이블을 선택하면, 발견된 모든 레이블이 지정된 리소스는 Defender for Cloud에 표시됩니다.
 
-# Exercise 5: Upload sensitive data
+<img width="1826" height="1041" alt="image" src="https://github.com/user-attachments/assets/880f0917-5aa0-48c3-a59d-bd69715c9ceb" />
 
-### Upload data to Storage account
+3. **Apply** 를 선택하고 **Save** 를 누릅니다.  
 
-Create a new storage account based on the instructions in [Module 19](https://github.com/Azure/Microsoft-Defender-for-Cloud/blob/main/Labs/Modules/Module%2019%20-%20Defender%20for%20Storage.md#exercise-2-create-a-storage-account).
+# Exercise 5: 민감 데이터 업로드 (sensitive data)
 
-1. In the **Azure Portal**, navigate to **Storage accounts**.
-2. Open the storage account you have created.
+### Storage account 에 민감 데이터 업로드
+
+새로운 storage account 를 생성합니다. 이전 Lab을 참고합니다. [Module 19](https://github.com/Azure/Microsoft-Defender-for-Cloud/blob/main/Labs/Modules/Module%2019%20-%20Defender%20for%20Storage.md#exercise-2-create-a-storage-account).
+
+1.  **Azure Portal**, 에서 **Storage accounts** 로 이동합니다..
+2. 생헝한 storage account 를 엽니다.
 3. Navigate to **Data storage > Containers** and create new container by selecting the **+ Container** button on top of the page.
 
-   ![Create Container](../Images/createcontainerdasp.png?raw=true)
+<img width="1817" height="1025" alt="image" src="https://github.com/user-attachments/assets/c0c75fa9-0c4d-42a9-aefa-abfc3131c10b" />
+
+<img width="1826" height="1040" alt="image" src="https://github.com/user-attachments/assets/77cfab3e-15c9-4e98-aaa2-7190c22ab4bb" />
+
+
+<img width="1812" height="817" alt="image" src="https://github.com/user-attachments/assets/c78b1c8e-2934-42b4-8f90-d11d9af8a6a9" />
+> [!NOTE]
+> 방화벽에서 IP 를 열어주고 해야함
 
 4. Choose a name, leave other settings by default and select **Create**.
 5. Open the new container by clicking on its name and select the **Upload** button on top of the page.
