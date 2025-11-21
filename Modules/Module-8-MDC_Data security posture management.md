@@ -72,9 +72,9 @@ In case of GCP storage buckets, please visit [**Module 10 - Connecting a GCP pro
 > [!NOTE]
 > It takes up to 48 hours for first scan results in case of AWS and GCP.
 
-# Data Sensitivity Settings
+# 데이터 민감도 설정 (Data Sensitivity Settings)
 
-## Exercise 3: Configure sensitive data categories
+## Exercise 3: 민감한 데이터 범주 구성하기 (Configure sensitive data categories)
 
 1. Navigate to **Microsoft Defender for Cloud > Environment settings** 으로 이동합니다. 
 
@@ -95,64 +95,83 @@ In case of GCP storage buckets, please visit [**Module 10 - Connecting a GCP pro
 
 6. 새로운 설정 확인 하기 위해, Data sensitivity 페이지 상단에 **Save** 를 선택합니다.
 
-## (Optional) Exercise 4: Import and configure custom sensitive info types and sensitivity labels
 
-Defender for Cloud provides built-in sensitive info types (SITs) from Microsoft Purview out-of-the-box. If you have Enterprise Mobility and Security E5/A5/G5 licensing you can also optionally import your own custom sensitive info types and labels from Microsoft Purview compliance portal. After enabling integration with Microsoft Purview, you will get the option to set-up label thresholds and select your custom SITs to be used for sensitive data discovery.
+7. 커스텀도 가능하다. Purview 에서 설정한 커스텀도 다음과 같이 목록에 표시되며 선택한다.
+<img width="1822" height="1030" alt="image" src="https://github.com/user-attachments/assets/d9dad0cf-a933-4531-9d10-f814e2f8902e" />
 
-### Enable integration with Microsoft Purview
 
-1. Log into **Microsoft Purview compliance portal**.
-2. Navigate to **Information Protection > Labels**.
-3. In the consent notice messages, select **Turn on** and then select **Yes** to share your custom info types and sensitivity labels with Defender for Cloud.
+## (Optional) Exercise 4: 사용자 지정 민감 정보 유형과 민감도 레이블 가져오기 및 구성 (Import and configure custom sensitive info types and sensitivity labels)
 
-   ![Enable Purview integration 1](../Images/turnonpurviewintegration1.png?raw=true)
+Defender for Cloud는 Microsoft Purview에서 제공하는 **기본 민감 정보 유형(SIT)**을 즉시 사용할 수 있도록 제공합니다. Enterprise Mobility and Security E5/A5/G5 라이선스를 보유한 경우, Microsoft Purview 규정 준수 포털에서 사용자 지정 민감 정보 유형과 레이블을 가져와 추가로 구성할 수도 있습니다. Microsoft Purview와의 통합을 활성화하면 레이블 임계값을 설정하고 민감한 데이터 검색에 사용할 사용자 지정 SIT(Custom SIT)를 선택할 수 있는 옵션이 제공됩니다..
 
-   ![Enable Purview integration 2](../Images/turnonpurviewintegration2.png?raw=true)
+### Microsoft Purview 와의 연계 활성화 (Enable integration with Microsoft Purview)
+
+1. **Microsoft Purview compliance portal** 에 로그인 합니다.
+2. **Information Protection > Labels** 로 이동합니다.
+3. 처음 접속하면 아래와 같은 경보 메시지가 나올수 있습니다. **Turn on** 를 선택하고, MDC 와 사용자 지정 정보 유형 (Custom info types) 과 민감도 레이블(sensitivity labels) 연계하기 위해  **Yes** 를 선택합니다.
+
+<img width="772" height="605" alt="image" src="https://github.com/user-attachments/assets/710a329a-52cb-47de-9076-82f9354eaf8d" />
+
+
+<img width="948" height="471" alt="image" src="https://github.com/user-attachments/assets/4f953fe1-534d-408a-a7d7-9808dbf98ce4" />
 
 <!--
 > [!NOTE]
-> Purview portal integration messages are subject to changes, so it is possible they will not look exactly the same like in this excercise.
+> Purview 포털의 연계 관련 메시지는 변경될 수 있으므로, 이번 연습에서 보이는 화면과 정확히 동일하지 않을 수 있습니다.
 -->
 
-### Create a custom sensitive info type
+### 사용자 지정 민감 정보 유형 만들기 (Create a custom sensitive info type)
 
-1. Navigate to **Data classification > Classifiers > Sensitive info types**.
-    - In case of the new Microsoft Purview portal, this can be found in the **Information Protection** blade.
+1. 메뉴를 이동합니다. **Data classification > Classifiers > Sensitive info types**.
+    - 새로운 Microsoft Purview portal 에서는, **Information Protection** 블레이드에서 찾을 수 있습니다.
 
-      ![Custom SIT creation 1](../Images/customsit1.png?raw=true)
+<img width="1800" height="932" alt="image" src="https://github.com/user-attachments/assets/ed56d7b7-7820-4b73-baaf-dba9739a86b0" />
 
-2. Select **Create sensitive info type**.
-3. Enter name and description.
 
-   ![Custom SIT creation 2](../Images/customsit2.png?raw=true)
+2. **Create sensitive info type** 를 선택합니다.
+3. 이름 과 설명을 입력합니다.
 
-4. On the **Patterns** step, select **Create pattern**.
-5. Add primary element and choose **Keyword list**.
+<img width="1826" height="692" alt="image" src="https://github.com/user-attachments/assets/a77421ba-9319-4b6f-a048-6ed9e0b8d15a" />
 
-   ![Custom SIT creation 3](../Images/customsit3.png?raw=true)
 
-6. In the **ID** field, type  *"DSPM"*.
-7. In the **Keyword group #1, Case insensitive**, type *"data security posture management"*.
-8. Select the **String match** option and click **Done**.
+4. **Patterns** 단계에서,  **Create pattern** 을 선택합니다.
+5. 주요 구성요소 (primary element) 를 추가하고 **Keyword list** 를 선택합니다.
 
-   ![Custom SIT creation 4](../Images/customsit4.png?raw=true)
+<img width="1427" height="758" alt="image" src="https://github.com/user-attachments/assets/f5e256a4-d78e-4492-bbb2-084ccd661dcd" />
 
-9. Confirm by selecting the **Create** button.
-10. Leave **High confidence level** selected in the next step.
-11. On the Finish page review the settings and save the new Custom SIT by selecting the **Create** button.
+6. **ID** 필드에서,   *"DSPM"* 을 타이핑합니다.
+7. **Keyword group #1, Case insensitive** 에서, *"data security posture management"* 를 타이핑합니다.
+8. **String match** 옵션을 선택하고, **Done** 을 클릭합니다.
 
-    ![Custom SIT creation 5](../Images/customsit5.png?raw=true)
+<img width="1821" height="1036" alt="image" src="https://github.com/user-attachments/assets/155a3cac-0ac1-4f5a-adf2-6a9efc826e3c" />
 
-You can now select your Custom SIT from the **Custom** category in the **Data sensitivity** settings described in **Excercise 3**. Create and upload a document which will include the phrase *"data security posture management"* to test your Custom SIT.
+<img width="1823" height="1030" alt="image" src="https://github.com/user-attachments/assets/3ea0e895-2a9f-4145-a2d7-fb4432a00398" />
 
-### Set the threshold for sensitivity labels
+<img width="1850" height="1032" alt="image" src="https://github.com/user-attachments/assets/1519afa8-4f32-4337-a475-7325c779e498" />
 
- In the Microsoft Purview compliance portal, make sure your sensitivity label scope is set to *Items*; under which you should configure auto labeling for *Files* and *Emails*. Labels must be published with a label policy to take effect.
+<img width="1832" height="1036" alt="image" src="https://github.com/user-attachments/assets/9da6742f-4aa7-4d52-ab82-e0c1d25ae98f" />
+
+
+9. **Create** 버턴을 클릭하여 확인합니다.
+10. 다음 단계에서 **High confidence level** 이 선택된 채로 남겨 둡니다.
+11. 마지막 페이지에서, 설정을 검토하고, **Create** 버튼을 선택하여 새로운 Custom SIT 를 저장합니다. 
+
+<img width="1838" height="968" alt="image" src="https://github.com/user-attachments/assets/ac0103b5-bb1c-427b-9a8c-02fc466a2876" />
+
+이제 **데이터 민감도(Data sensitivity)** 설정의 **사용자 지정(Custom)** 범주에서 만든 사용자 지정 SIT를 선택할 수 있습니다. 테스트를 위해 *"data security posture management"* 라는 문구를 포함한 문서를 작성하여 업로드합니다.
+
+<img width="1815" height="1027" alt="image" src="https://github.com/user-attachments/assets/46fc1684-533e-4c27-9b10-e1336c5ebb36" />
+
+
+### 민감도 레이블의 임계값 설정 (Set the threshold for sensitivity labels)
+
+Microsoft Purview 규정 준수 포털에서 민감도 레이블 범위가 *항목(Items)*으로 설정되어 있는지 확인합니다.; 그 아래에서 **파일(Files)**과 **이메일(Emails)**에 대한 자동 레이블링(auto labeling)을 구성해야 합니다. 레이블은 적용되기 위해 반드시 레이블 정책과 함께 게시되어야 합니다.
+
 
 > [!NOTE]
-> If you don't have any existing sensitivity labels, follow [this link](https://learn.microsoft.com/en-us/purview/how-to-automatically-label-your-content) for instruction on how to create them.
+> 기존 민감도 레이블(sensitivity labels)이 없다면, 레이블을 만드는 방법에 대한 안내는 [링크](https://learn.microsoft.com/en-us/purview/how-to-automatically-label-your-content)를 따라가세요.
 
- You can use the previously created Custom SIT to be used as auto-labeling condition. If you then create a document with the key phrase, the document will then be automatically labeled. Alternatively, you can manualy label documents for example in Office applications.
+ 이전에 만든 사용자 지정 SIT를 자동 레이블링 조건으로 사용할 수 있습니다. 이후 해당 키워드가 포함된 문서를 생성하면 문서가 자동으로 레이블링됩니다. 또는 Office 애플리케이션에서 문서를 수동으로 레이블링할 수도 있습니다.
 
  ![Auto-labeling](../Images/autolabeling.png?raw=true)
 
@@ -162,7 +181,7 @@ To have your labeled data visible in Defender for Cloud, follow these steps to c
 
 2. Select **Change** to see the list of sensitivity labels and select the sensitivity label that will serve as your threshold. If you select the **(Lowest sensitivity)** label, all discovered labeled resources will be shown in Defender for Cloud.
 
-   ![Setting label threshold](../Images/labelthreshold.png?raw=true)
+<img width="1837" height="1030" alt="image" src="https://github.com/user-attachments/assets/5c4fb7b8-cae7-4e99-b230-5bb505d2d2bd" />
 
 3. Select **Apply** and **Save**.  
 
