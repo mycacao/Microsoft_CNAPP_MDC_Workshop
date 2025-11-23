@@ -198,27 +198,38 @@ Defender for Cloud에서 레이블이 지정된 데이터가 표시되도록 하
 새로운 storage account 를 생성합니다. 이전 Lab을 참고합니다. [Module 19](https://github.com/Azure/Microsoft-Defender-for-Cloud/blob/main/Labs/Modules/Module%2019%20-%20Defender%20for%20Storage.md#exercise-2-create-a-storage-account).
 
 1.  **Azure Portal**, 에서 **Storage accounts** 로 이동합니다..
-2. 생헝한 storage account 를 엽니다.
-3. Navigate to **Data storage > Containers** and create new container by selecting the **+ Container** button on top of the page.
+2. 생성한 storage account 를 엽니다.
+3.  **Data storage > Containers** 로 메뉴를 이동합니다. 그리고 메뉴 상단에  **+ Container** 버튼을 선택해서 새로운 컨테이너를 생성합니다.
 
 <img width="1817" height="1025" alt="image" src="https://github.com/user-attachments/assets/c0c75fa9-0c4d-42a9-aefa-abfc3131c10b" />
 
 <img width="1826" height="1040" alt="image" src="https://github.com/user-attachments/assets/77cfab3e-15c9-4e98-aaa2-7190c22ab4bb" />
 
-
 <img width="1812" height="817" alt="image" src="https://github.com/user-attachments/assets/c78b1c8e-2934-42b4-8f90-d11d9af8a6a9" />
+
 > [!NOTE]
 > 방화벽에서 IP 를 열어주고 해야함
+> 또한 Blob storage 로 테스트하는 경우, 해당 container 에 대해 reader 또는 contributor 권한이 있어야 함
+>
 
-4. Choose a name, leave other settings by default and select **Create**.
-5. Open the new container by clicking on its name and select the **Upload** button on top of the page.
-6. Navigate to [Files](https://github.com/Azure/Microsoft-Defender-for-Cloud/blob/main/Labs/Files/TestData.zip) and download the *TestData.zip* file. This is a file that contains sample of sensitive data we will use in this exercise.
-7. Select the file *"Credit Card Expenses.docx"* located in *CreditCardNumber* folder from the extracted zip archive and upload it to the container.
+<img width="1832" height="1036" alt="image" src="https://github.com/user-attachments/assets/47ac0127-5cd7-408c-8aa3-f28b831973a3" />
 
-   ![Upload data to Container](../Images/uploaddatatocontainerdasp.png?raw=true)
+<img width="1834" height="1036" alt="image" src="https://github.com/user-attachments/assets/fa798c51-f2a8-40aa-9df9-eaaf0bb69406" />
+
+사용자가 권한이 있어야 파일을 스토리지에 업로드하고 읽을수 있음
+
+<img width="1842" height="1024" alt="image" src="https://github.com/user-attachments/assets/4ea1a0e0-ad71-4d23-8790-7dd90f7a861f" />
+
+4. 이름을  선택하고, 나머지는 기본값으로 남겨둡니다. 그리고 **Create** 선택합니다.
+5. 이름을 선택하여 새로운 컨테이너를 Open합니다.  그리고 메뉴 상단의 **Upload** 버튼을 눌러서 파일을 업로드합니다.
+6. 업로드할 샘플 파일은 다음 링크로 이동하여 [Files](https://github.com/Azure/Microsoft-Defender-for-Cloud/blob/main/Labs/Files/TestData.zip) 파일 *TestData.zip* 을 다운로드 합니다. 이 샘플 파일은 민감 데이터를 포함하고 있는 파일입니다. 이번 연습에서 활용합니다. 
+7. 압출을 풀고 *CreditCardNumber* folder 에 있는  *"Credit Card Expenses.docx"* 을 선택합니다. 그리고 이것을 컨테이너에 업로드 합니다.
+   
+   
+<img width="1841" height="687" alt="image" src="https://github.com/user-attachments/assets/4ab168b0-36e2-4a40-ba0e-2c19dfdcc336" />
 
 > [!NOTE]
-> It takes up to 24 hours for first scan results in case of newly created storage account. Databases are scanned on a weekly basis or within 24 hours on newly enabled subscriptions.
+> 새로 생성된 스토리지 계정의 경우 첫 번째 스캔 결과가 표시되기까지 최대 24시간이 소요됩니다. 데이터베이스는 매주 스캔되며, 새로 활성화된 구독에서는 24시간 이내에 스캔됩니다.
 
 ### (Optional) Upload data to Azure SQL database
 
